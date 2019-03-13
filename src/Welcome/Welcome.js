@@ -9,7 +9,7 @@ class Welcome extends Component {
       <div className="Welcome" align="center">
         <p>Welcome to the joke site Pun-King!</p>
         <br />
-        <p>On this page you will find a variety of funny jokes to laugh at!</p>
+        <p>On this page you will find a variety of funny jokes to laugh at (or not cause some of them are really bad)!</p>
         <p>Press the button below to get started :0)</p>
         <Link to="/search">
           <button type="button" className="btn btn-outline-danger">
