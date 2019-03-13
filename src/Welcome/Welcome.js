@@ -13,7 +13,7 @@ class Welcome extends Component {
         <p>Press the button below to get started :0)</p>
         <Link to="/search">
           <button type="button" className="btn btn-outline-danger">
-            Get started
+            Get started!
           </button>
         </Link>
       </div>
