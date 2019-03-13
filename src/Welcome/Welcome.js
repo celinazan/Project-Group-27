@@ -7,11 +7,11 @@ class Welcome extends Component {
   render() {
     return (
       <div className="Welcome" align="center">
-        <p>Welcome to Celias dinner planner!</p>
+        <p>Welcome to the joke site!</p>
 
         <Link to="/search">
           <button type="button" className="btn btn-outline-danger">
-            Start planning
+            Get started
           </button>
         </Link>
       </div>
