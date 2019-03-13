@@ -8,7 +8,9 @@ class Welcome extends Component {
     return (
       <div className="Welcome" align="center">
         <p>Welcome to the joke site!</p>
-
+        <br />
+        <p>On this page you will find a variety of funny jokes to laugh at!</p>
+        <p>Press the button below to get started :0)</p>
         <Link to="/search">
           <button type="button" className="btn btn-outline-danger">
             Get started
