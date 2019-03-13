@@ -7,7 +7,7 @@ class Welcome extends Component {
   render() {
     return (
       <div className="Welcome" align="center">
-        <p>Welcome to the joke site!</p>
+        <p>Welcome to the joke site, Pun-King!</p>
         <br />
         <p>On this page you will find a variety of funny jokes to laugh at!</p>
         <p>Press the button below to get started :0)</p>
