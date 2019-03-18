@@ -7,7 +7,7 @@ class Sorting extends Component {
     return (
       <div className="sorting" align="center">
       <h2>Before you can begin your adventure learning spells at Hogwarts, you will be sorted into one of the four houses.</h2>
-      <p>Choose a house:</p>
+      <p>Please choose your house:</p>
         <div className="card">
           <div className="card-body">
         <h5 class="card-title">Gryffindor</h5>

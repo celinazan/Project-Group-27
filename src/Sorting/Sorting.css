@@ -1,6 +1,10 @@
+.sorting {
+    padding-top: 35px;
+}
+
 h2 {
     color:        white;
-    font-size:      17pt;
+    font-size:      24pt;
     font-family:    Georgia, 'Times New Roman', Times, serif;  
     padding-top:    10px;
 }
@@ -9,7 +13,7 @@ p {
     color:          white;
     font-size:      13pt;
     font-family:    Georgia, 'Times New Roman', Times, serif;
-    padding-top:    65px;
+    padding-top:    50px;
 }
 
 .card {
