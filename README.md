@@ -11,6 +11,7 @@ Our project is an application for finding, and hopefully enjoying, jokes in diff
 
 This far into the project we have implemented:
 
+
 We still want to add the following features:
 
 . A way to pick what category of jokes the user wants to view
@@ -22,6 +23,7 @@ We still want to add the following features:
 . A sidebar to easily switch between category of jokes
 
 . A reload button so you can generate a new joke without having to manually refresh the page
+
 
 Given that we have time, here are some more features we would like to add:
 
@@ -35,4 +37,5 @@ Given that we have time, here are some more features we would like to add:
 # File description
 
 Welcome.js - Code for the first welcome page
+
 App.js - 
