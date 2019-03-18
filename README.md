@@ -13,5 +13,8 @@ This far into the project we have implemented...
 
 We still want to add the following features:
 
+Given that we have time, here are some more features we would like to add:
+. A joke of the day, displayed at the top of the page
+
 # File description
 
