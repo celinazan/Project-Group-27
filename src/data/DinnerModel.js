@@ -1,31 +1,8 @@
 import ObservableModel from "./ObservableModel";
-//import ourKey from "./ourKey";
-const BASE_URL = "http://sunset.nada.kth.se:8080/iprog/group/51/";
-const httpOptions = {
-  headers: {
-    joke_category: "Programming"
-  }
-};
 
 class DinnerModel extends ObservableModel {
   constructor() {
     super();
-    this._numberOfGuests = 1;
-    this._currentId = null;
-    this._yourDishes = [];
-    this._idArray = [];
-    this.getNumberOfGuests();
-  }
-
-  /**
-   * Get the number of guests
-   * @returns {number}
-   */
-  getNumberOfGuests() {
-    if (this.getCookie("numGuests")) {
-      this._numberOfGuests = parseInt(this.getCookie("numGuests"));
-    }
-    return this._numberOfGuests;
   }
 
   deleteSpecificCookie(cname) {
@@ -54,7 +31,7 @@ class DinnerModel extends ObservableModel {
     return "";
   }
 
-  decodeDish() {
+  decodeCookie() {
     if (this.getCookie("dishes")) {
       var arr = JSON.parse(this.getCookie("dishes"));
       for (var id in arr) {
@@ -70,96 +47,25 @@ class DinnerModel extends ObservableModel {
     return this._yourDishes;
   }
 
-  getFullMenu() {
-    if (this._yourDishes.length === 0) {
-      this.decodeDish();
-    }
-    return this._yourDishes;
-  }
-
-  getFullMenuPrice() {
-    let fullPrice = 0;
-    for (var dish in this._yourDishes) {
-      fullPrice += this._yourDishes[dish].extendedIngredients.length;
-    }
-    return fullPrice;
-  }
-  addDishToMenu(id, obj) {
-    var newDish;
-
-    if (obj.id == id) {
-      newDish = obj;
-      for (var dish in this._yourDishes) {
-        if (this._yourDishes[dish].id == newDish.id) {
-          this.removeDishFromMenu(this._yourDishes[dish].id, this._yourDishes);
-        }
-      }
-      this._idArray.push(newDish.id);
-      this._yourDishes.push(newDish);
-    }
-    this.newCookie();
-    this.notifyObservers();
-  }
-
-  removeDishFromMenu(id, arr) {
-    for (var dish in arr) {
-      if (id == arr[dish].id) {
-        arr.splice(dish, 1);
-      }
-      if (id == this._idArray[dish]) {
-        this._idArray.splice(dish, 1);
-        console.log(this._idArray);
-        this.newCookie();
-      }
-      if (this._idArray.length === 0) {
-        this.deleteSpecificCookie("dishes");
-      }
-    }
-
-    this.notifyObservers();
-  }
-
-  /**
-   * Set number of guests
-   * @param {number} num
-   */
-  setNumberOfGuests(num) {
-    this._numberOfGuests = num;
-    if (this._numberOfGuests < 1) {
-      this._numberOfGuests = 1;
-    }
-    document.cookie = "numGuests=" + this._numberOfGuests + "; path=/";
-    this.notifyObservers();
-  }
-
-  setCurrentId(num) {
-    this._currentId = num;
-    this.notifyObservers();
-  }
-
-  getCurrentId() {
-    return this._currentId;
-  }
-
   // API methods
 
   /**
    * Do an API call to the search API endpoint.
    * @returns {Promise<any>}
    */
-  getJoke() {
-    const url = "https://icanhazdadjoke.com/";
-    const jc = "joke_category";
-    return fetch(url, {
-      headers: {
-        Accept: "application/json"
-      }
-    }).then(this.processResponse);
-  }
+  fetchData(parameter) {
+    const url = new URL("https://www.potterapi.com/v1/" + parameter),
+      params = {
+        key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
+      };
+    Object.keys(params).forEach(key =>
+      url.searchParams.append(key, params[key])
+    );
+    console.log(url);
 
-  getSpecificDish(id) {
-    const detailUrl = BASE_URL + "recipes/" + id + "/information";
-    return fetch(detailUrl, httpOptions).then(this.processResponse);
+    return fetch(url, {
+      key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
+    }).then(this.processResponse);
   }
 
   processResponse(response) {
