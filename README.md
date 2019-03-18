@@ -15,7 +15,7 @@ This far into the project we have implemented:
 
 We still want to add the following features:
 
-A small sorting ceremony to give the user a house
+A small sorting ceremony to give the user a house, either randomly or by choice
 
 A way for the user to view all the spells provided by the API
 
