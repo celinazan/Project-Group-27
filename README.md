@@ -4,16 +4,6 @@ The final project for group 27, consisting of:
 
 Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
-# TO-DO LIST (so we remember what to do)
-
-Fix styling on the house boxes for the sorting, use grid or flex to place them nicely, color the box to match the house
-
-Fix link from sorting to spells and people
-
-Handle fetched API info correctly
-
-Design a page for looking up spells and people
-
 
 # Project description
 
@@ -51,3 +41,14 @@ Add a small icon in the upper corner to show what house the user belongs to
 Welcome.js - Code for the first welcome page
 
 App.js - 
+
+
+# TO-DO LIST (so we remember what to do)
+
+Fix styling on the house boxes for the sorting, use grid or flex to place them nicely, color the box to match the house
+
+Fix link from sorting to spells and people
+
+Handle fetched API info correctly
+
+Design a page for looking up spells and people
