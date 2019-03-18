@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // Alternative to passing the moderl as the component property,
 // we can import the model instance directly
-import modelInstance from "../data/DinnerModel";
+import modelInstance from "../data/MagicModel";
 import "./DetailView.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
