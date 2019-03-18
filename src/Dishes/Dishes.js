@@ -67,11 +67,11 @@ class Dishes extends Component {
     // when data is retrieved we update the state
     // this will cause the component to re-render
     modelInstance
-      .getAllDishes(searchArray[0], searchArray[1])
+      .getJoke()
       .then(dishes => {
         this.setState({
           status: "LOADED",
-          dishes: dishes.results
+          dishes: dishes
         });
         console.log(this.decodeUrlBar());
       })
@@ -83,97 +83,19 @@ class Dishes extends Component {
   }
 
   render() {
-    let dishesList = null;
-    // depending on the state we either generate
-    // useful message to the user or show the list
-    // of returned dishes
     switch (this.state.status) {
       case "LOADING":
-        dishesList = <em>Loading...</em>;
-        break;
+        return <em>Loading...</em>;
       case "LOADED":
-        dishesList = this.state.dishes.map(dish => (
-          <div className="cardDiv" key={dish.id}>
-            <img
-              src={"https://spoonacular.com/recipeImages/" + dish.image}
-              height="150px"
-              width="200px"
-            />
-            <br />
-            <Link to={"/details/id=?" + dish.id}>
-              <button
-                type="button"
-                className="btn btn-outline-danger"
-                value={dish.id}
-                onClick={this.currentIdUpdate}
-              >
-                Go to dish page
-              </button>
-            </Link>
-            <br />
-            <div className="titleDiv">{dish.title}</div>
+        return (
+          <div className="col-sm-9">
+            <p>{this.state.dishes.joke}</p>
           </div>
-        ));
-        break;
-      default:
-        dishesList = <b>Failed to load data, please try again</b>;
-        break;
-    }
+        );
 
-    return (
-      <div className="Dishes col-sm-9">
-        <div className="input-group">
-          <input
-            type="text"
-            placeholder="Enter Key Words"
-            value={this.state.filter}
-            onChange={this.filterUpdate}
-          />
-          <select
-            id="allTypes"
-            value={this.state.value}
-            onChange={this.valueUpdate}
-          >
-            <option value="all">All</option>
-            <option value="side+dish">Side Dish</option>
-            <option value="main+course">Main Course</option>
-            <option value="dessert">Dessert</option>
-            <option value="appetizer">Appetizer</option>
-            <option value="beverage">Beverage</option>
-            <option value="bread">Bread</option>
-            <option value="breakfast">Breakfast</option>
-            <option value="drink">Drink</option>
-            <option value="salad">Salad</option>
-            <option value="sauce">Sauce</option>
-            <option value="soup">Soup</option>
-          </select>
-          <Link
-            to={
-              "/search/?query=" +
-              this.state.filter +
-              "&type=" +
-              this.state.value
-            }
-          >
-            <button
-              className="btn btn-search"
-              type="button"
-              onClick={this.submitClick}
-            >
-              Search
-            </button>
-          </Link>
-        </div>
-        <div align="center">
-          <h3>Sample dishes</h3>
-          <p>Please use the search function to find more dishes!</p>
-          <Link to="/testy">
-          <button type="button" className="btn btn-outline-danger"/>
-          </Link>
-        </div>
-        {dishesList}
-      </div>
-    );
+      default:
+        return <b>Failed to load data, please try again</b>;
+    }
   }
 }
 

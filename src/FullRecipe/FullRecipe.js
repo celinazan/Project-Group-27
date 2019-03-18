@@ -58,38 +58,14 @@ class FullRecipe extends Component {
   render() {
     return (
       <div className="container" align="center">
-        <div className="row">
-          <h1 className="col-12">
-            {"My Dinner: " + this.state.numberOfGuests + " people"}
-          </h1>
-        </div>
-        <Link to="/confirmDinner">
-          <button type="button" className="btn btn-outline-danger col-3">
-            Go back and edit dinner
-          </button>
-        </Link>
-
-        <div className="row">
-          {this.state.fullMenuList.map(dish => (
-            <div className="row summaryDiv" key={dish.id}>
-              <img
-                id="summaryImage"
-                className="col-4"
-                src={dish.image}
-                height="300px"
-              />
-              <div className="col-4">
-                <h4>{dish.title}</h4>
-                <p> {this.showAllIngredients(dish)} </p>
-              </div>
-
-              <div className="col-4">
-                <h4>Preparation</h4>
-                <p>{dish.instructions}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <img
+          alt="Chuck Norris"
+          src="https://qph.fs.quoracdn.net/main-qimg-5257f03ae8e32d83c34f7bc83ee34c7b"
+        />
+        <img
+          alt="Dad"
+          src="https://66.media.tumblr.com/6a8d699d806d3dde81a45bbcff475d5d/tumblr_os50oylPpx1vntq6no2_500.jpg"
+        />
       </div>
     );
   }
