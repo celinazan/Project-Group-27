@@ -32,12 +32,18 @@ A small sorting ceremony to give the user a house, either randomly or by choice
 A way for the user to view all the spells provided by the API
 
 A way for the user to view all the characters and members of different houses
+
+A way for the user to change house
+
+A way for the user to add their own spells, or add descriptions to spells that they've learned
   
 .
 
 Given that we have time, here are some more features we would like to add:
 
 Save favorite spells
+
+Add a small icon in the upper corner to show what house the user belongs to
    
   
 # File description
