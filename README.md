@@ -7,7 +7,7 @@ Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
 # Project description
 
-Our project is an application for finding, and hopefully enjoying, jokes in different categories that we fetch with calls to a selection of joke based APIs. The basic idea is that you get to choose a category, such as "dad jokes" or "Chuck Norris jokes", from which you want to view a joke. 
+Our project is an application meant to help new students at Hogwarts School for Witchcraft and Wizardry. A new student can use the page to look through what spells they will learn, as well as look up information about other students at Hogwarts.
 
 This far into the project we have implemented:
 
@@ -15,25 +15,17 @@ This far into the project we have implemented:
 
 We still want to add the following features:
 
-A way to pick what category of jokes the user wants to view
+A small sorting ceremony to give the user a house, either randomly or by choice
 
-A way to save favorite jokes
+A way for the user to view all the spells provided by the API
 
-A function to get a joke randomly from any category
-
-A sidebar to easily switch between category of jokes
-
-A reload button so you can generate a new joke without having to manually refresh the page
+A way for the user to view all the characters and members of different houses
   
 .
 
 Given that we have time, here are some more features we would like to add:
 
-A joke of the day, displayed at the top of the page
-
-Depending on API info, make a way to search for jokes
-
-Also depending on API info, maybe have category choices within categories
+Save favorite spells
    
   
 # File description
