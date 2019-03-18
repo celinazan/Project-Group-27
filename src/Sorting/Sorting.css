@@ -1,9 +1,21 @@
 h2 {
-    color: white;
-    font-size: 14pt;
-    font-family: Georgia, 'Times New Roman', Times, serif;  
+    color:        white;
+    font-size:      17pt;
+    font-family:    Georgia, 'Times New Roman', Times, serif;  
+    padding-top:    10px;
 }
 
-.sorting {
-    position: center;
+p { 
+    color:          white;
+    font-size:      13pt;
+    font-family:    Georgia, 'Times New Roman', Times, serif;
+    padding-top:    65px;
+}
+
+.card {
+    width: 450px;
+}
+
+.Gryff {
+    background-color: rgb(252, 156, 156);
 }
