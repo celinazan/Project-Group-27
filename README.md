@@ -4,6 +4,10 @@ The final project for group 27, consisting of:
 
 Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
+# TO-DO LIST
+
+Fix styling on the house boxes for the sorting
+Fix link from sorting to spells and people
 
 # Project description
 
