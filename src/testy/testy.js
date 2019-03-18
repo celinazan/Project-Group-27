@@ -6,3 +6,4 @@ class Categories extends Component {
     }
 } 
 
+<p>Hello World</p>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Welcome from "./Welcome/Welcome";
 import modelInstance from "./data/DinnerModel";
-import SelectDish from "./SelectDish/SelectDish";
+import Sorting from "./Sorting/Sorting";
 import "./App.css";
 import DishView from "./DishView/DishView";
 import ConfirmView from "./ConfirmView/ConfirmView";
@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Joke Depot"
+      title: ""
     };
   }
 
@@ -28,7 +28,7 @@ class App extends Component {
           <Route exact path="/" component={Welcome} />
           <Route
             path="/search"
-            render={() => <SelectDish model={modelInstance} />}
+            render={() => <Sorting model={modelInstance} />}
           />
           <Route
             path="/details/:id"
