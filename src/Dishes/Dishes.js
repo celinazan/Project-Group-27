@@ -167,6 +167,9 @@ class Dishes extends Component {
         <div align="center">
           <h3>Sample dishes</h3>
           <p>Please use the search function to find more dishes!</p>
+          <Link to="/testy">
+          <button type="button" className="btn btn-outline-danger"/>
+          </Link>
         </div>
         {dishesList}
       </div>

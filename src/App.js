@@ -12,7 +12,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Pun-King"
+      title: "Joke Depot"
     };
   }
 
@@ -41,6 +41,10 @@ class App extends Component {
           <Route
             path="/fullRecipe"
             render={() => <FullRecipe model={modelInstance} />}
+          />
+          <Route
+          path="/testy"
+          render={() => <testy model={modelInstance} />}
           />
         </header>
       </div>
