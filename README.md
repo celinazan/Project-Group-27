@@ -4,7 +4,7 @@ The final project for group 27, consisting of:
 
 Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
-# TO-DO LIST (for the group members so we remember what to do)
+# TO-DO LIST (so we remember what to do)
 
 Fix styling on the house boxes for the sorting, use grid or flex to place them nicely, color the box to match the house
 
