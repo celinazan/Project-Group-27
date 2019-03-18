@@ -89,7 +89,7 @@ class Dishes extends Component {
       case "LOADED":
         return (
           <div className="col-sm-9">
-            <p>{this.state.dishes.joke}</p>
+            <p>{this.state.dishes}</p>
           </div>
         );
 

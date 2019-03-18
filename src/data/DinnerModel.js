@@ -1,9 +1,9 @@
 import ObservableModel from "./ObservableModel";
 //import ourKey from "./ourKey";
-const BASE_URL = "http://sunset.nada.kth.se:8080/iprog/group/51/";
+const BASE_URL = "https://www.potterapi.com/v1/";
 const httpOptions = {
   headers: {
-    joke_category: "Programming"
+    key: "$2a$10$tE9Q/PpSuP7rQLFkrB2IOOcl.0ptM34qLwotYCBjL/p9DIL.o4pMK"
   }
 };
 
@@ -148,18 +148,18 @@ class DinnerModel extends ObservableModel {
    * @returns {Promise<any>}
    */
   getJoke() {
-    const url = "https://icanhazdadjoke.com/";
-    const jc = "joke_category";
-    return fetch(url, {
-      headers: {
-        Accept: "application/json"
-      }
-    }).then(this.processResponse);
-  }
+    const url = new URL("https://www.potterapi.com/v1/spells/"),
+      params = {
+        key: "$2a$10$tE9Q/PpSuP7rQLFkrB2IOOcl.0ptM34qLwotYCBjL/p9DIL.o4pMK"
+      };
+    Object.keys(params).forEach(key =>
+      url.searchParams.append(key, params[key])
+    );
+    console.log(url);
 
-  getSpecificDish(id) {
-    const detailUrl = BASE_URL + "recipes/" + id + "/information";
-    return fetch(detailUrl, httpOptions).then(this.processResponse);
+    return fetch(url, {
+      key: "$2a$10$tE9Q/PpSuP7rQLFkrB2IOOcl.0ptM34qLwotYCBjL/p9DIL.o4pMK"
+    }).then(this.processResponse);
   }
 
   processResponse(response) {
