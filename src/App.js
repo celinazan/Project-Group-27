@@ -6,7 +6,7 @@ import Sorting from "./Sorting/Sorting";
 import "./App.css";
 import DishView from "./DishView/DishView";
 import ConfirmView from "./ConfirmView/ConfirmView";
-import FullRecipe from "./FullRecipe/FullRecipe";
+import FullRecipe from "./Spells/Spells";
 
 class App extends Component {
   constructor(props) {
@@ -42,10 +42,7 @@ class App extends Component {
             path="/fullRecipe"
             render={() => <FullRecipe model={modelInstance} />}
           />
-          <Route
-          path="/testy"
-          render={() => <testy model={modelInstance} />}
-          />
+          <Route path="/testy" render={() => <testy model={modelInstance} />} />
         </header>
       </div>
     );

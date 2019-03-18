@@ -89,7 +89,14 @@ class Dishes extends Component {
       case "LOADED":
         return (
           <div className="col-sm-9">
-            <p>{this.state.dishes}</p>
+            <p>
+              {this.state.dishes.map(
+                house => (
+                  <p>{house.name}</p>
+                ),
+                console.log(house.name)
+              )}
+            </p>
           </div>
         );
 
