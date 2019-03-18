@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Welcome from "./Welcome/Welcome";
-import modelInstance from "./data/DinnerModel";
+import modelInstance from "./data/MagicModel";
 import Sorting from "./Sorting/Sorting";
 import "./App.css";
 import DishView from "./DishView/DishView";

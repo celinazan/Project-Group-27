@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import modelInstance from "../data/DinnerModel";
+import modelInstance from "../data/MagicModel";
 import "./Spells.css";
 import { Link } from "react-router-dom";
 
