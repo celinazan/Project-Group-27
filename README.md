@@ -21,6 +21,8 @@ Our project is an application meant to help new students at Hogwarts School for 
 
 This far into the project we have implemented:
 
+A front page
+
 .
 
 We still want to add the following features:
