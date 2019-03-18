@@ -38,6 +38,7 @@ class Sorting extends Component {
           <h6 class="card-subtitle mb-2 text-muted">Clever and Creative</h6>
         </div>
       </div>
+      <br />
       </div>
     );
   }
