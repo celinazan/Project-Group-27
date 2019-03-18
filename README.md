@@ -6,8 +6,14 @@ Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
 # TO-DO LIST
 
-Fix styling on the house boxes for the sorting
+Fix styling on the house boxes for the sorting, use grid or flex to place them nicely, color the box to match the house
+
 Fix link from sorting to spells and people
+
+Handle fetched API info correctly
+
+Design a page for looking up spells and people
+
 
 # Project description
 
