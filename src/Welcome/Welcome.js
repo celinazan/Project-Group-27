@@ -7,12 +7,12 @@ class Welcome extends Component {
   render() {
     return (
       <div className="Welcome" align="center">
-        <p>Welcome to our joke site <b> Joke Depot</b> with our mascot, The Joke-O-Lantern!</p>
+      <br />
+        <h1>Welcome Hogwarts School for Witchcraft and Wizardry!</h1>
+        <p>This nice piece of muggle technology lets you browse the spells you will be learning.</p>
         <br />
-        <p>On this page you will find a variety of funny jokes to enjoy and maybe even laugh at (or not cause some of them are really bad)!</p>
-        <p>Press the button below to get started :0)</p>
         <Link to="/search">
-          <button type="button" className="btn btn-outline-danger">
+          <button type="button" className="btn btn-outline-light">
             Get started!
           </button>
         </Link>

@@ -1,0 +1,18 @@
+.Welcome {
+    color: white;
+    font-size: 14pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+
+body {
+    background-image: url("https://i.pinimg.com/originals/28/d9/cf/28d9cf83174278c70f6f658e6049dc37.jpg");
+    background-size: cover;
+}
+
+p {
+    padding-top: 5px;
+}
+
+h1 {
+    padding-top: 5px;
+}
