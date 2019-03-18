@@ -36,7 +36,7 @@ Save favorite spells
 Add a small icon in the upper corner to show what house the user belongs to
    
   
-# File description
+# File descriptions
 
 Welcome.js - Code for the first welcome page
 
