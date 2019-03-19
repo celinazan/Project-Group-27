@@ -45,10 +45,10 @@ App.js -
 
 # TO-DO LIST (so we remember what to do)
 
-Fix styling on the house boxes for the sorting, use grid or flex to place them nicely, color the box to match the house
+Fix the width of clickable area for the house cards
 
-Fix link from sorting to spells and people
-
-Handle fetched API info correctly
+Handle fetched API info correctly, fix the page importing the spells
 
 Design a page for looking up spells and people
+
+Design a page for adding info to spells the user has learned
