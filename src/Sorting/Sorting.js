@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Sorting.css";
 import "bootstrap/dist/css/bootstrap.css";
 
@@ -11,6 +12,7 @@ class Sorting extends Component {
           will be sorted into one of the four houses.
         </h2>
         <p>Please choose your house:</p>
+        <Link to="/sorted">
         <div className="card" id="gryffindorCard">
           <div className="card-body row">
             <div className="col-6 cardText">
@@ -28,12 +30,14 @@ class Sorting extends Component {
             </div>
           </div>
         </div>
+        </Link>
         <br />
 
+        <Link to="/sorted">
         <div className="card" id="slytherinCard">
           <div className="card-body row">
             <div className="col-6 cardText">
-              <h5 className="card-title">Slytherin</h5>
+            <h5 className="card-title">Slytherin</h5>
               <h6 className="card-subtitle mb-2 text-muted">
                 Cunning and Ambitious
               </h6>
@@ -47,8 +51,10 @@ class Sorting extends Component {
             </div>
           </div>
         </div>
+        </Link>
         <br />
 
+        <Link to="/sorted">
         <div className="card" id="hufflepuffCard">
           <div className="card-body row">
             <div className="col-6 cardText">
@@ -64,8 +70,10 @@ class Sorting extends Component {
             </div>
           </div>
         </div>
+        </Link>
         <br />
 
+        <Link to="/sorted">
         <div className="card" id="ravenclawCard">
           <div className="card-body row">
             <div className="col-6 cardText">
@@ -83,18 +91,20 @@ class Sorting extends Component {
             </div>
           </div>
         </div>
-      </div>
-      <br />
-      <br />
+        </Link>
+        <br />
+        <br />
 
+      <Link to="/sorted">
       <div className="card">
         <div className="card-body">
           <h5 class="card-title">Random</h5>
           <h6 class="card-subtitle mb-2 text-muted">Let the Sorting Hat decide!</h6>
         </div>
       </div>
+      </Link>
       <br />
-      </div>
+    </div>
     );
   }
 }

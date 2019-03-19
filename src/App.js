@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import Welcome from "./Welcome/Welcome";
 import modelInstance from "./data/MagicModel";
 import Sorting from "./Sorting/Sorting";
+import Sorted from "./Sorted/Sorted";
+import Spells from "./Spells/Spells";
 import "./App.css";
 import DishView from "./DishView/DishView";
 import ConfirmView from "./ConfirmView/ConfirmView";
@@ -31,6 +33,19 @@ class App extends Component {
             render={() => <Sorting model={modelInstance} />}
           />
           <Route
+            path="/sorted"
+            render={() => <Sorted model={modelInstance} />}
+            />
+
+          <Route
+            path="/spells"
+            render={() => <Spells model={modelInstance} />}
+            />
+
+
+
+
+          <Route
             path="/details/:id"
             render={() => <DishView model={modelInstance} />}
           />
@@ -42,7 +57,6 @@ class App extends Component {
             path="/fullRecipe"
             render={() => <FullRecipe model={modelInstance} />}
           />
-          <Route path="/testy" render={() => <testy model={modelInstance} />} />
         </header>
       </div>
     );
