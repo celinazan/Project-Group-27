@@ -47,8 +47,12 @@ App.js -
 
 Fix the width of clickable area for the house cards
 
-Handle fetched API info correctly, fix the page importing the spells
+Handle fetched API info correctly, fix the page importing the spells because background is off and its just a long list
 
 Design a page for looking up spells and people
 
 Design a page for adding info to spells the user has learned
+
+Fix so that users chosen house is saved
+
+Make a function to randomize house, exists in the API!
