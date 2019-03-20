@@ -48,6 +48,8 @@ Home.js - Navigation page for reaching different functions
 
 NewSort.js - Similar to Sorting.js, modified for re-sorting
 
+Spells.js - Fetching all the spells from the API
+
 
 # TO-DO LIST (so we remember what to do)
 

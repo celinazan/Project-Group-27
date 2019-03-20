@@ -1,8 +1,26 @@
 import ObservableModel from "./ObservableModel";
 
-class DinnerModel extends ObservableModel {
+class MagicModel extends ObservableModel {
   constructor() {
     super();
+    this._currentHouse;
+  }
+
+  toTitleCase(str) {
+    str = str.toLowerCase().split(" ");
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(" ");
+  }
+
+  setHouse() {
+    this._currentHouse = this.toTitleCase(this.getCookie("house"));
+    this.notifyObservers();
+  }
+
+  getHouse() {
+    return this._currentHouse;
   }
 
   deleteSpecificCookie(cname) {
@@ -60,5 +78,5 @@ class DinnerModel extends ObservableModel {
 }
 
 // Export an instance of DinnerModel
-const modelInstance = new DinnerModel();
+const modelInstance = new MagicModel();
 export default modelInstance;
