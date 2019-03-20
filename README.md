@@ -45,14 +45,16 @@ App.js -
 
 # TO-DO LIST (so we remember what to do)
 
-Fix the width of clickable area for the house cards
-
 Handle fetched API info correctly, fix the page importing the spells because background is off and its just a long list
 
 Design a page for looking up spells and people
 
 Design a page for adding info to spells the user has learned
 
-Fix so that users chosen house is saved
+Fix so that users chosen house is saved and displayed on the sorted page
 
 Make a function to randomize house, exists in the API!
+
+Figure out how to make a unique background for the spells and people pages
+
+Place the spells, learned spells etc cards in a square like in the sketch 

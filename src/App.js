@@ -5,6 +5,8 @@ import modelInstance from "./data/MagicModel";
 import Sorting from "./Sorting/Sorting";
 import Sorted from "./Sorted/Sorted";
 import Spells from "./Spells/Spells";
+import Home from "./Home/Home";
+import NewSort from "./NewSort/NewSort";
 import "./App.css";
 import DishView from "./DishView/DishView";
 import ConfirmView from "./ConfirmView/ConfirmView";
@@ -40,6 +42,13 @@ class App extends Component {
           <Route
             path="/spells"
             render={() => <Spells model={modelInstance} />}
+          />
+
+          <Route path="/home" render={() => <Home model={modelInstance} />} />
+
+          <Route
+            path="/resort"
+            render={() => <NewSort model={modelInstance} />}
           />
 
           <Route
