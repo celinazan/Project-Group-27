@@ -17,6 +17,6 @@ h1 {
 }
 
 #bookbackground{
-  background-image: url('file:///C:/Users/emeli/Desktop/iprog/Project-Group-27/src/Spells/Bookiboi.jpg');
+  /*background-image: url('./Bookiboi.jpg');*/
   background-color: #cccccc;
 }
