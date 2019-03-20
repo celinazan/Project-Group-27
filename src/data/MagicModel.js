@@ -1,6 +1,6 @@
 import ObservableModel from "./ObservableModel";
 
-class MagicModel extends ObservableModel {
+class DinnerModel extends ObservableModel {
   constructor() {
     super();
     this._currentHouse;
@@ -78,5 +78,6 @@ class MagicModel extends ObservableModel {
   }
 }
 
-const modelInstance = new MagicModel();
+// Export an instance of DinnerModel
+const modelInstance = new DinnerModel();
 export default modelInstance;

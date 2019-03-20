@@ -21,7 +21,7 @@ class Sorting extends Component {
         <p>Please choose your house:</p>
 
         <div className="card" id="gryffindorCard">
-          <Link to="/sorted/house=?gryffindor">
+          <Link to="/sorted/gryffindor" onClick={this.setCookie("gryffindor")}>
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Gryffindor</h5>
@@ -43,7 +43,7 @@ class Sorting extends Component {
         <br />
 
         <div className="card" id="slytherinCard">
-          <Link to="/sorted/house=?slytherin">
+          <Link to="/sorted/slytherin" onClick={this.setCookie("slytherin")}>
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Slytherin</h5>
@@ -65,7 +65,10 @@ class Sorting extends Component {
         <br />
 
         <div className="card" id="hufflepuffCard">
-          <Link to={"/sorted/house=?hufflepuff"}>
+          <Link
+            to={"/sorted/hufflepuff"}
+            onClick={this.setCookie("hufflepuff")}
+          >
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Hufflepuff</h5>
@@ -87,7 +90,7 @@ class Sorting extends Component {
         <br />
 
         <div className="card" id="ravenclawCard">
-          <Link to="/sorted/house=?ravenclaw">
+          <Link to="/sorted/ravenclaw" onClick={this.setCookie("ravenclaw")}>
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Ravenclaw</h5>
@@ -109,7 +112,7 @@ class Sorting extends Component {
         <br />
         <br />
 
-        <div className="card">
+        <div className="card" id="random">
           <Link to="/sorted">
             <div className="card-body row">
             <div className="col-6 cardText">

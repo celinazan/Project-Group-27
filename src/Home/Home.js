@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 class Home extends Component {
   render() {
     return (
-      <div className="sorting" align="center">
+        <div className="sorting" align="center">
         <Link to="/spells">
           <div className="card" id="spellCard">
             <div className="card-body row">
@@ -49,7 +49,7 @@ class Home extends Component {
         </Link>
         <br />
 
-        <Link to="/search">
+        <Link to="/resort">
           <div className="card" id="sortingCard">
             <div className="card-body row">
               <div className="col-12 cardText">
