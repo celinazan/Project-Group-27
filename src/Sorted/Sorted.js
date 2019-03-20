@@ -10,6 +10,8 @@ class Sorted extends Component {
     // We create the state to store the various statusess
     // e.g. API data loading or error
     this.state = {
+      status: "LOADING",
+
       currentHouse: modelInstance.getHouse()
     };
     this.setHouseCookie = this.setHouseCookie.bind(this);
@@ -30,26 +32,53 @@ class Sorted extends Component {
   componentDidMount() {
     modelInstance.addObserver(this);
     this.setHouseCookie();
+
+    modelInstance
+      .fetchData("characters")
+      .then(people => {
+        this.setState({
+          status: "LOADED",
+          people: people
+        });
+      })
+      .catch(() => {
+        this.setState({
+          status: "ERROR"
+        });
+      });
   }
 
   render() {
-    return (
-      <div className="sorted" align="center">
-        <h2>
-          Congratulations! You have been sorted into {this.state.currentHouse}!
-        </h2>
-        <p>
-          Here is a list of some students also in {this.state.currentHouse},
-          past and present:
-        </p>
-        <br />
-        <Link to="/home">
-          <button type="button" className="btn btn-outline-light">
-            Start learning!
-          </button>
-        </Link>
-      </div>
-    );
+    switch (this.state.status) {
+      case "LOADING":
+        return <em>Loading spells...</em>;
+      case "LOADED":
+        return (
+          <div className="sorted" align="center">
+            <h2>
+              Congratulations! You have been sorted into{" "}
+              {this.state.currentHouse}!
+            </h2>
+            <p>
+              Here is a list of some students also in {this.state.currentHouse},
+              past and present:
+            </p>
+            <div className="col-sm-9" id="people">
+              {this.state.people.map(person => (
+                <div key={person._id}>{person.name}</div>
+              ))}
+            </div>
+            <br />
+            <Link to="/home">
+              <button type="button" className="btn btn-outline-light">
+                Start learning!
+              </button>
+            </Link>
+          </div>
+        );
+      default:
+        return <b>Failed to load data, please try again</b>;
+    }
   }
 }
 
