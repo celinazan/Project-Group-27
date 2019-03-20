@@ -44,8 +44,8 @@ class Sorting extends Component {
 
         <div className="card" id="slytherinCard">
           <Link to="/sorted/slytherin" onClick={this.setCookie("slytherin")}>
-            <div className="card-body row" onClick={this.setCookie}>
-              <div className="col-6 cardText" id="slytherin">
+            <div className="card-body row">
+              <div className="col-6 cardText">
                 <h5 className="card-title">Slytherin</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   Cunning and Ambitious
@@ -69,8 +69,8 @@ class Sorting extends Component {
             to={"/sorted/hufflepuff"}
             onClick={this.setCookie("hufflepuff")}
           >
-            <div className="card-body row" onClick={this.setCookie}>
-              <div className="col-6 cardText" id="hufflepuff">
+            <div className="card-body row">
+              <div className="col-6 cardText">
                 <h5 className="card-title">Hufflepuff</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   Loyal and Kind
@@ -91,8 +91,8 @@ class Sorting extends Component {
 
         <div className="card" id="ravenclawCard">
           <Link to="/sorted/ravenclaw" onClick={this.setCookie("ravenclaw")}>
-            <div className="card-body row" onClick={this.setCookie}>
-              <div className="col-6 cardText" id="ravenclaw">
+            <div className="card-body row">
+              <div className="col-6 cardText">
                 <h5 className="card-title">Ravenclaw</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   Clever and Creative
