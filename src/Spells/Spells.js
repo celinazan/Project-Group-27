@@ -13,10 +13,10 @@ class Spells extends Component {
   componentDidMount() {
     modelInstance
       .fetchData("spells")
-      .then(dishes => {
+      .then(spellList => {
         this.setState({
           status: "LOADED",
-          dishes: dishes
+          spellList: spellList
         });
       })
       .catch(() => {
@@ -33,7 +33,7 @@ class Spells extends Component {
       case "LOADED":
         return (
           <div className="col-sm-9" id="spells">
-            {this.state.dishes.map(spell => (
+            {this.state.spellList.map(spell => (
               <div key={spell._id}>{spell.spell}</div>
             ))}
           </div>

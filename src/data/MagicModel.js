@@ -4,6 +4,13 @@ class MagicModel extends ObservableModel {
   constructor() {
     super();
     this._currentHouse;
+    this.params = {
+      key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
+    };
+  }
+
+  changeParams(newParam) {
+    this.params = newParam;
   }
 
   toTitleCase(str) {
