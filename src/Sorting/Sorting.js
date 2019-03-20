@@ -112,7 +112,7 @@ class Sorting extends Component {
         <br />
         <br />
 
-        <div className="card">
+        <div className="card" id="random">
           <Link to="/sorted">
             <div className="card-body row">
             <div className="col-6 cardText">
