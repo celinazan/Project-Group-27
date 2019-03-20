@@ -1,8 +1,19 @@
 import ObservableModel from "./ObservableModel";
 
-class DinnerModel extends ObservableModel {
+class MagicModel extends ObservableModel {
   constructor() {
     super();
+    this._currentHouse = null;
+  }
+
+  setHouse() {
+    this._currentHouse = this.getCookie("house");
+    this.notifyObservers();
+  }
+
+  getHouse() {
+    console.log(this._currentHouse);
+    return this._currentHouse;
   }
 
   deleteSpecificCookie(cname) {
@@ -59,6 +70,5 @@ class DinnerModel extends ObservableModel {
   }
 }
 
-// Export an instance of DinnerModel
-const modelInstance = new DinnerModel();
+const modelInstance = new MagicModel();
 export default modelInstance;
