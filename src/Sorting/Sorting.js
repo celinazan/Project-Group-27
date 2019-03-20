@@ -83,17 +83,18 @@ class Sorting extends Component {
             </div>
           </div>
         </div>
-      </div>
-      <br />
-      <br />
+        <br />
+        <br />
 
-      <div className="card">
-        <div className="card-body">
-          <h5 class="card-title">Random</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Let the Sorting Hat decide!</h6>
+        <div className="card">
+          <div className="card-body">
+            <h5 class="card-title">Random</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              Let the Sorting Hat decide!
+            </h6>
+          </div>
         </div>
-      </div>
-      <br />
+        <br />
       </div>
     );
   }
