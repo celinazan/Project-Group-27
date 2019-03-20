@@ -56,7 +56,7 @@ class Sorted extends Component {
         return (
           <div className="sorted" align="center">
             <h2>
-              Congratulations! You have been sorted into{" "}
+              Congratulations! You have been sorted into <br /> <br/> {" "}
               {this.state.currentHouse}!
             </h2>
             <p>
