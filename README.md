@@ -54,3 +54,7 @@ Design a page for adding info to spells the user has learned
 Fix so that users chosen house is saved and displayed on the sorted page
 
 Make a function to randomize house, exists in the API!
+
+Figure out how to make a unique background for the spells and people pages
+
+Place the spells, learned spells etc cards in a square like in the sketch 
