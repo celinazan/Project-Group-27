@@ -7,7 +7,8 @@ Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
 # Project description
 
-Our project is an application meant to help new students at Hogwarts School for Witchcraft and Wizardry. A new student can use the page to look through what spells they will learn, as well as look up information about other students at Hogwarts.
+Our project is an application meant to help new students at Hogwarts School for Witchcraft and Wizardry. A new student can use the page to look through what spells they will learn, as well as look up information about other students in their house as well as teachers from their house at Hogwarts. To view other students, the user must change house.
+
 
 This far into the project we have implemented:
 
