@@ -36,7 +36,7 @@ class Sorted extends Component {
     return (
       <div className="sorted" align="center">
         <h2>
-          Congratulations! You have been sorted into {this.state.currentHouse}!
+          Congratulations! You have been sorted into <br /><br /> {this.state.currentHouse}!
         </h2>
         <p>
           Here is a list of some students also in {this.state.currentHouse},

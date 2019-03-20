@@ -11,6 +11,7 @@ import "./App.css";
 import DishView from "./DishView/DishView";
 import ConfirmView from "./ConfirmView/ConfirmView";
 import FullRecipe from "./Spells/Spells";
+import Characters from "./Characters/Characters";
 
 class App extends Component {
   constructor(props) {
@@ -53,6 +54,13 @@ class App extends Component {
             path="/resort"
             render={() => <NewSort model={modelInstance} />}
           />
+
+          <Route
+            path="/people"
+            render={() => <Characters model={modelInstance} />}
+            />
+
+
 
           <Route
             path="/details/:id"

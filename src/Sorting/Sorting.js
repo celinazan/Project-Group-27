@@ -25,7 +25,7 @@ class Sorting extends Component {
               </div>
               <div className="col-6">
                 <img
-                  src="https://i.pinimg.com/originals/d1/e8/53/d1e853a51cc4f6b25a9f96914e04b992.png"
+                  src="https://vignette.wikia.nocookie.net/pottermore/images/1/16/Gryffindor_crest.png/revision/latest/scale-to-width-down/180?cb=20111112232412"
                   alt="gryffindor"
                   height="100px"
                 />
@@ -47,7 +47,7 @@ class Sorting extends Component {
               </div>
               <div className="col-6">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/3/34/Slytherin.png"
+                  src="https://vignette.wikia.nocookie.net/pottermore/images/4/45/Slytherin_Crest.png/revision/latest?cb=20111112232353"
                   alt="slytherin"
                   height="100px"
                 />
@@ -69,7 +69,7 @@ class Sorting extends Component {
               </div>
               <div className="col-6">
                 <img
-                  src="http://static1.squarespace.com/static/58881ebecd0f68fe5325db26/58e7baa4ebbd1a4ffd8a2fa9/58e7c22620099ea6518ba69c/1520449065213/?format=1500w"
+                  src="https://vignette.wikia.nocookie.net/harrypotter/images/0/06/Hufflepuff_ClearBG.png/revision/latest/scale-to-width-down/350?cb=20161020182518"
                   alt="hufflepuff"
                   height="100px"
                 />
@@ -91,9 +91,9 @@ class Sorting extends Component {
               </div>
               <div className="col-6">
                 <img
-                  src="http://static1.squarespace.com/static/58881ebecd0f68fe5325db26/58e7baa4ebbd1a4ffd8a2fa9/58e7c21420099ea6518b9eee/1491583516246/?format=1500w"
+                  src="https://vignette.wikia.nocookie.net/pottermore/images/4/40/Ravenclaw_Crest_1.png/revision/latest?cb=20140604194505"
                   alt="ravenclaw"
-                  height="100px"
+                  height="110px"
                 />
               </div>
             </div>
