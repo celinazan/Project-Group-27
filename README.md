@@ -60,12 +60,12 @@ Design a page for looking up spells and people
 
 Design a page for adding info to spells the user has learned
 
-Fix so that users chosen house is saved and displayed on the sorted page
-
-Make a function to randomize house, exists in the API!
+Make a function to randomize house, exists in the API! 
 
 Figure out how to make a unique background for the spells and people pages
 
 Place the spells, learned spells etc cards in a square like in the sketch 
 
 Fix so that houses are saved even after re-sorting ELIAS
+
+Make icons for houses clickable to display the members of that house
