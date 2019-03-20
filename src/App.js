@@ -33,17 +33,14 @@ class App extends Component {
             render={() => <Sorting model={modelInstance} />}
           />
           <Route
-            path="/sorted"
+            path="/sorted/:house"
             render={() => <Sorted model={modelInstance} />}
-            />
+          />
 
           <Route
             path="/spells"
             render={() => <Spells model={modelInstance} />}
-            />
-
-
-
+          />
 
           <Route
             path="/details/:id"

@@ -10,9 +10,8 @@ class DinnerModel extends ObservableModel {
       cname + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
 
-  newCookie() {
-    var str_arr = JSON.stringify(this._idArray);
-    document.cookie = "dishes=" + str_arr + "; path=/";
+  newCookie(cname, value) {
+    document.cookie = cname + "=" + value + "; path=/";
   }
 
   getCookie(cname) {
@@ -29,22 +28,6 @@ class DinnerModel extends ObservableModel {
       }
     }
     return "";
-  }
-
-  decodeCookie() {
-    if (this.getCookie("dishes")) {
-      var arr = JSON.parse(this.getCookie("dishes"));
-      for (var id in arr) {
-        this.getSpecificDish(arr[id])
-          .then(dish => {
-            this.addDishToMenu(dish.id, dish);
-          })
-          .catch(() => {
-            alert("There was an error");
-          });
-      }
-    }
-    return this._yourDishes;
   }
 
   // API methods

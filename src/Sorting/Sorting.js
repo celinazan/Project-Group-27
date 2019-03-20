@@ -2,8 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Sorting.css";
 import "bootstrap/dist/css/bootstrap.css";
+import modelInstance from "../data/MagicModel";
 
 class Sorting extends Component {
+  setCookie(houseName) {
+    console.log(houseName);
+    modelInstance.newCookie("house", houseName);
+    console.log(document.cookie);
+  }
+
   render() {
     return (
       <div className="sorting" align="center">
@@ -12,8 +19,9 @@ class Sorting extends Component {
           will be sorted into one of the four houses.
         </h2>
         <p>Please choose your house:</p>
-        <Link to="/sorted">
-          <div className="card" id="gryffindorCard">
+
+        <div className="card" id="gryffindorCard">
+          <Link to="/sorted/gryffindor" onClick={this.setCookie("gryffindor")}>
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Gryffindor</h5>
@@ -29,14 +37,15 @@ class Sorting extends Component {
                 />
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <br />
 
-        <Link to="/sorted">
-          <div className="card" id="slytherinCard">
-            <div className="card-body row">
-              <div className="col-6 cardText">
+        <div className="card" id="slytherinCard">
+          <Link to="/sorted/slytherin" onClick={this.setCookie("slytherin")}>
+            <div className="card-body row" onClick={this.setCookie}>
+              <div className="col-6 cardText" id="slytherin">
                 <h5 className="card-title">Slytherin</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   Cunning and Ambitious
@@ -50,14 +59,18 @@ class Sorting extends Component {
                 />
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <br />
 
-        <Link to="/sorted">
-          <div className="card" id="hufflepuffCard">
-            <div className="card-body row">
-              <div className="col-6 cardText">
+        <div className="card" id="hufflepuffCard">
+          <Link
+            to={"/sorted/hufflepuff"}
+            onClick={this.setCookie("hufflepuff")}
+          >
+            <div className="card-body row" onClick={this.setCookie}>
+              <div className="col-6 cardText" id="hufflepuff">
                 <h5 className="card-title">Hufflepuff</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   Loyal and Kind
@@ -66,19 +79,20 @@ class Sorting extends Component {
               <div className="col-6">
                 <img
                   src="http://static1.squarespace.com/static/58881ebecd0f68fe5325db26/58e7baa4ebbd1a4ffd8a2fa9/58e7c22620099ea6518ba69c/1520449065213/?format=1500w"
-                  alt="slytherin"
+                  alt="hufflepuff"
                   height="100px"
                 />
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <br />
 
-        <Link to="/sorted">
-          <div className="card" id="ravenclawCard">
-            <div className="card-body row">
-              <div className="col-6 cardText">
+        <div className="card" id="ravenclawCard">
+          <Link to="/sorted/ravenclaw" onClick={this.setCookie("ravenclaw")}>
+            <div className="card-body row" onClick={this.setCookie}>
+              <div className="col-6 cardText" id="ravenclaw">
                 <h5 className="card-title">Ravenclaw</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   Clever and Creative
@@ -87,26 +101,28 @@ class Sorting extends Component {
               <div className="col-6">
                 <img
                   src="http://static1.squarespace.com/static/58881ebecd0f68fe5325db26/58e7baa4ebbd1a4ffd8a2fa9/58e7c21420099ea6518b9eee/1491583516246/?format=1500w"
-                  alt="slytherin"
+                  alt="ravenclaw"
                   height="100px"
                 />
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <br />
         <br />
 
-        <Link to="/sorted">
-          <div className="card">
+        <div className="card">
+          <Link to="/sorted">
             <div className="card-body">
-              <h5 class="card-title">Random</h5>
-              <h6 class="card-subtitle mb-2 text-muted">
+              <h5 className="card-title">Random</h5>
+              <h6 className="card-subtitle mb-2 text-muted">
                 Let the Sorting Hat decide!
               </h6>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <br />
       </div>
     );
