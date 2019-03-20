@@ -7,9 +7,8 @@ class Home extends Component {
   render() {
     return (
         <div className="sorting" align="center">
-        
+        <Link to="/spells">
           <div className="card" id="spellCard">
-          <Link to="/spells">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">Spells</h5>
@@ -18,14 +17,12 @@ class Home extends Component {
                 </h6>
               </div>
             </div>
-            </Link>
           </div>
-        
+        </Link>
         <br />
 
-        
+        <Link to="/learned">
           <div className="card" id="learnedCard">
-          <Link to="/learned">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">Learned Spells</h5>
@@ -34,14 +31,12 @@ class Home extends Component {
                 </h6>
               </div>
             </div>
-            </Link>
           </div>
-        
+        </Link>
         <br />
 
-        
+        <Link to="/people">
           <div className="card" id="peopleCard">
-          <Link to="/people">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">People</h5>
@@ -50,14 +45,12 @@ class Home extends Component {
                 </h6>
               </div>
             </div>
-            </Link>
           </div>
-        
+        </Link>
         <br />
 
-        
+        <Link to="/resort">
           <div className="card" id="sortingCard">
-          <Link to="/resort">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">Change House</h5>
@@ -66,9 +59,8 @@ class Home extends Component {
                 </h6>
               </div>
             </div>
-            </Link>
           </div>
-        
+        </Link>
         <br />
       </div>
     );
