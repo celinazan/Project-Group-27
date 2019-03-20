@@ -4,16 +4,27 @@
 
 h2 {
   color: white;
-  font-size: 24pt;
+  font-size: 26pt;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-top: 10px;
 }
 
 p {
   color: white;
-  font-size: 13pt;
+  font-size: 14pt;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding-top: 50px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover 
+{
+    color: black;
+    text-decoration: none;   
 }
 
 .card {
@@ -39,3 +50,4 @@ p {
 #gryffindorCard {
   background-color: #ae0001;
 }
+

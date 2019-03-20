@@ -37,7 +37,7 @@ class Spells extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return <em>Loading...</em>;
+        return <em>Loading spells...</em>;
       case "LOADED":
         return (
           <div className="col-sm-9">
