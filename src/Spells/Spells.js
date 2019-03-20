@@ -40,7 +40,7 @@ class Spells extends Component {
         return <em>Loading spells...</em>;
       case "LOADED":
         return (
-          <div className="col-sm-9">
+          <div className="col-sm-9" id="spells">
             {this.state.dishes.map(spell => (
               <div key={spell._id}>{spell.spell}</div>
             ))}
