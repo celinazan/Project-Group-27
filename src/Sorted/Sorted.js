@@ -10,7 +10,7 @@ class Sorted extends Component {
                 <h2 >Congratulations! You have been sorted into ______!</h2>
                     <p>Here is a list of some students also in ______, past and present:</p>
                     <br />
-                <Link to="spells">
+                <Link to="home">
                     <button type="button" className="btn btn-outline-light">
                     Start learning!
                     </button>
