@@ -13,19 +13,20 @@ This far into the project we have implemented:
 
 A front page
 
+A small sorting ceremony to give the user a house, either randomly or by choice
+
+A way for the user to change house
+
 .
 
 We still want to add the following features:
 
-A small sorting ceremony to give the user a house, either randomly or by choice
 
 A way for the user to view all the spells provided by the API
 
-A way for the user to view all the characters and members of different houses
+A way for the user to view all the characters and members of their house
 
-A way for the user to change house
-
-A way for the user to add their own spells, or add descriptions to spells that they've learned
+A way for the user to add descriptions to spells that they've learned
   
 .
 
