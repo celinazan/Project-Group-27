@@ -40,7 +40,13 @@ Add a small icon in the upper corner to show what house the user belongs to
 
 Welcome.js - Code for the first welcome page
 
-App.js - 
+Sorting.js - Code for the sorting process
+
+Sorted.js - Code for showing the chosen house and saving that information for the user
+
+Home.js - Navigation page for reaching different functions
+
+NewSort.js - Similar to Sorting.js, modified for re-sorting
 
 
 # TO-DO LIST (so we remember what to do)
