@@ -67,3 +67,5 @@ Make a function to randomize house, exists in the API!
 Figure out how to make a unique background for the spells and people pages
 
 Place the spells, learned spells etc cards in a square like in the sketch 
+
+Fix so that houses are saved even after re-sorting ELIAS
