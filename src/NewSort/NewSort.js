@@ -33,7 +33,7 @@ class NewSort extends Component {
 
         <div className="card" id="slytherinCard">
           <Link to="/sorted/slytherin">
-            <div className="card-body row" onClick={this.setCookie}>
+            <div className="card-body row">
               <div className="col-6 cardText" id="slytherin">
                 <h5 className="card-title">Slytherin</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
@@ -79,7 +79,7 @@ class NewSort extends Component {
 
         <div className="card" id="ravenclawCard">
           <Link to="/sorted/ravenclaw">
-            <div className="card-body row" onClick={this.setCookie}>
+            <div className="card-body row">
               <div className="col-6 cardText" id="ravenclaw">
                 <h5 className="card-title">Ravenclaw</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
@@ -98,7 +98,21 @@ class NewSort extends Component {
         </div>
 
         <br />
+        <br />
+
+        <div className="card">
+          <Link to="/sorted">
+            <div className="card-body">
+              <h5 className="card-title">Random</h5>
+              <h6 className="card-subtitle mb-2 text-muted">
+                Let the Sorting Hat decide!
+              </h6>
+            </div>
+          </Link>
         </div>
+
+        <br />
+      </div>
     );
   }
 }
