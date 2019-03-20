@@ -3,11 +3,19 @@ import ObservableModel from "./ObservableModel";
 class MagicModel extends ObservableModel {
   constructor() {
     super();
-    this._currentHouse = null;
+    this._currentHouse;
+  }
+
+  toTitleCase(str) {
+    str = str.toLowerCase().split(" ");
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(" ");
   }
 
   setHouse() {
-    this._currentHouse = this.getCookie("house");
+    this._currentHouse = this.toTitleCase(this.getCookie("house"));
     this.notifyObservers();
   }
 
