@@ -11,6 +11,7 @@ import "./App.css";
 import DishView from "./DishView/DishView";
 import ConfirmView from "./ConfirmView/ConfirmView";
 import FullRecipe from "./Spells/Spells";
+import LearnedSpells from "./LearnedSpells/LearnedSpells";
 
 class App extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class App extends Component {
             path="/search"
             render={() => <Sorting model={modelInstance} />}
           />
+
           <Route
             path="/sorted/:house"
             render={() => <Sorted model={modelInstance} />}
@@ -44,10 +46,7 @@ class App extends Component {
             render={() => <Spells model={modelInstance} />}
           />
 
-          <Route 
-            path="/home" 
-            render={() => <Home model={modelInstance} />} 
-            />
+          <Route path="/home" render={() => <Home model={modelInstance} />} />
 
           <Route
             path="/resort"
@@ -55,13 +54,20 @@ class App extends Component {
           />
 
           <Route
+            path="/learnedSpells"
+            render={() => <LearnedSpells model={modelInstance} />}
+          />
+
+          <Route
             path="/details/:id"
             render={() => <DishView model={modelInstance} />}
           />
+
           <Route
             path="/confirmDinner"
             render={() => <ConfirmView model={modelInstance} />}
           />
+
           <Route
             path="/fullRecipe"
             render={() => <FullRecipe model={modelInstance} />}

@@ -18,6 +18,7 @@ class Sorted extends Component {
   setHouseCookie() {
     var currentURL = window.location.search.replace("?", "");
     modelInstance.newCookie("house", currentURL);
+    modelInstance.setHouse();
   }
 
   update() {
@@ -27,9 +28,8 @@ class Sorted extends Component {
   }
 
   componentDidMount() {
-    this.setHouseCookie();
     modelInstance.addObserver(this);
-    console.log(this.state.currentHouse);
+    this.setHouseCookie();
   }
 
   render() {
@@ -38,7 +38,10 @@ class Sorted extends Component {
         <h2>
           Congratulations! You have been sorted into {this.state.currentHouse}!
         </h2>
-        <p>Here is a list of some students also in ______, past and present:</p>
+        <p>
+          Here is a list of some students also in {this.state.currentHouse},
+          past and present:
+        </p>
         <br />
         <Link to="/home">
           <button type="button" className="btn btn-outline-light">

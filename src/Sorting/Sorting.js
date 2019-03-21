@@ -5,12 +5,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
 class Sorting extends Component {
-  setCookie(houseName) {
-    console.log(houseName);
-    modelInstance.newCookie("house", houseName);
-    console.log(document.cookie);
-  }
-
   render() {
     return (
       <div className="sorting" align="center">
@@ -65,7 +59,7 @@ class Sorting extends Component {
         <br />
 
         <div className="card" id="hufflepuffCard">
-          <Link to={"/sorted/house=?hufflepuff"}>
+          <Link to="/sorted/house=?hufflepuff">
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Hufflepuff</h5>
@@ -109,22 +103,22 @@ class Sorting extends Component {
         <br />
         <br />
 
-        <div className="card">
+        <div className="card" id="random">
           <Link to="/sorted">
             <div className="card-body row">
-            <div className="col-6 cardText">
-              <h5 className="card-title">Random</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                Let the Sorting Hat decide!
-              </h6>
-            </div>
-            <div className="col-6">
-            <img
-            src="https://vignette.wikia.nocookie.net/harrypotter/images/6/62/Sorting_Hat.png/revision/latest/scale-to-width-down/350?cb=20161120072849"
-            alt="hat"
-            height="100px"
-            />
-            </div>
+              <div className="col-6 cardText">
+                <h5 className="card-title">Random</h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  Let the Sorting Hat decide!
+                </h6>
+              </div>
+              <div className="col-6">
+                <img
+                  src="https://vignette.wikia.nocookie.net/harrypotter/images/6/62/Sorting_Hat.png/revision/latest/scale-to-width-down/350?cb=20161120072849"
+                  alt="hat"
+                  height="100px"
+                />
+              </div>
             </div>
           </Link>
         </div>

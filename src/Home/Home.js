@@ -49,7 +49,7 @@ class Home extends Component {
         </Link>
         <br />
 
-        <Link to="/search">
+        <Link to="/resort">
           <div className="card" id="sortingCard">
             <div className="card-body row">
               <div className="col-12 cardText">
