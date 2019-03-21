@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 class Characters extends Component {
   render() {
     return (
-      <div className="sorting">
+      <div className="characters">
       <h3 align="center">Click a house crest on the left to view members of that house</h3>
       <Link to="/people/gryffindors">
         <img
