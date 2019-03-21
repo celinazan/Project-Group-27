@@ -67,3 +67,5 @@ Figure out how to make a unique background for the spells and people pages
 Place the spells, learned spells etc cards in a square like in the sketch 
 
 Make the spells, learned spells etc cards not clickable on entire screen, limit their width
+
+Figure out what and how to save to backend
