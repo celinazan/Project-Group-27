@@ -77,6 +77,11 @@ class Spells extends Component {
       case "LOADED":
         return (
           <div className="page">
+            <Link to="/home">
+              <button type="button" className="btn btn-outline-light">
+                Go back to homepage
+              </button>
+            </Link>
             <div className="book">
               {this.state.spell.map(spell => (
                 <div className="spells" key={spell._id}>
