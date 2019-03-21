@@ -5,6 +5,14 @@ import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
 class Sorting extends Component {
+  sortingHat() {
+    var house;
+    modelInstance
+      .fetchData("sortingHat")
+      .then(selectedHouse => (house = selectedHouse.name));
+    return house;
+  }
+
   render() {
     return (
       <div className="sorting" align="center">
@@ -104,7 +112,7 @@ class Sorting extends Component {
         <br />
 
         <div className="card" id="random">
-          <Link to="/sorted">
+          <Link to={"/sorted" + this.sortingHat}>
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Random</h5>
