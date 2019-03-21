@@ -7,6 +7,8 @@ Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
 # Project description
 
+(OBS that we had to/decided to change from our original project, since our first choice didn't have a working API)
+
 Our project is an application called "Hogwarts Study Tool", an app meant to help new students at Hogwarts School for Witchcraft and Wizardry with learning spells and keeping notes of what the spells do. A new student can use the page to look through what spells they will learn, as well as look up information about other students in their house as well as teachers from the four house at Hogwarts.
 
 This far into the project we have implemented:
@@ -17,12 +19,11 @@ A small sorting ceremony to give the user a house, either randomly or by choice
 
 A way for the user to change house
 
+A way for the user to view all the spells provided by the API
+
 .
 
 We still want to add the following features:
-
-
-A way for the user to view all the spells provided by the API
 
 A way for the user to view all the characters and members of the different houses
 
@@ -32,7 +33,7 @@ A way for the user to add descriptions to spells that they've learned
 
 Given that we have time, here are some more features we would like to add:
 
-Save favorite spells
+Be able to save favorite spells
 
 Add a small icon in the upper corner to show what house the user belongs to
 
@@ -66,4 +67,4 @@ Place the spells, learned spells etc cards in a square like in the sketch
 
 Make the spells, learned spells etc cards not clickable on entire screen, limit their width
 
-Figure out what to save and how to save to backend
+Figure out how to save to backend
