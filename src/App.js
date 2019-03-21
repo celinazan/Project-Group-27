@@ -8,11 +8,9 @@ import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
 import NewSort from "./NewSort/NewSort";
 import "./App.css";
-import DishView from "./DishView/DishView";
-import ConfirmView from "./ConfirmView/ConfirmView";
 import FullRecipe from "./Spells/Spells";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
-
+import Characters from "./Characters/Characters";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -71,6 +69,10 @@ class App extends Component {
           <Route
             path="/fullRecipe"
             render={() => <FullRecipe model={modelInstance} />}
+          />
+          <Route
+            path="/people"
+            render={() => <Characters model={modelInstance} />}
           />
         </header>
       </div>

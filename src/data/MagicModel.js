@@ -6,6 +6,10 @@ class MagicModel extends ObservableModel {
     this._currentHouse;
   }
 
+  changeParams(newParam) {
+    this.params = newParam;
+  }
+
   toTitleCase(str) {
     str = str.toLowerCase().split(" ");
     for (var i = 0; i < str.length; i++) {
@@ -54,10 +58,11 @@ class MagicModel extends ObservableModel {
    * Do an API call to the search API endpoint.
    * @returns {Promise<any>}
    */
-  fetchData(parameter) {
+  fetchData(parameter, theHouse) {
     const url = new URL("https://www.potterapi.com/v1/" + parameter),
       params = {
-        key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
+        key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u",
+        house: theHouse
       };
     Object.keys(params).forEach(key =>
       url.searchParams.append(key, params[key])
