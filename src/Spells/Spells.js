@@ -34,10 +34,8 @@ class Spells extends Component {
     modelInstance
       .fetchData("spells")
       .then(spell => {
-        {
-          /* If statement to now get get blank pages if you go to far*/
-        }
-        if (this.state.spellIndex > 56) {
+        /* If statement to not get get blank pages if you go to far*/
+        if (this.state.spellIndex > 112) {
           this.setState({
             status: "LOADED",
             spellIndex: 112,
@@ -77,11 +75,6 @@ class Spells extends Component {
       case "LOADED":
         return (
           <div className="page">
-            <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Go back to homepage
-              </button>
-            </Link>
             <div className="book">
               {this.state.spell.map(spell => (
                 <div className="spells" key={spell._id}>
@@ -105,6 +98,11 @@ class Spells extends Component {
             >
               Next page
             </button>
+            <Link to="/home">
+              <button type="button" className="btn btn-outline-light">
+                Go back to homepage
+              </button>
+            </Link>
           </div>
         );
 
