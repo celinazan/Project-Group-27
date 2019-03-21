@@ -5,12 +5,31 @@ import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
 class Sorting extends Component {
+  constructor(props) {
+    super(props);
+    // We create the state to store the various statusess
+    // e.g. API data loading or error
+    this.state = {
+      sortedHouse: null
+    };
+    this.sortingHat = this.sortingHat.bind(this);
+  }
+
   sortingHat() {
-    var house;
     modelInstance
       .fetchData("sortingHat")
-      .then(selectedHouse => (house = selectedHouse.name));
-    return house;
+      .then(selectedHouse =>
+        this.setState({ sortedHouse: selectedHouse.toLowerCase() })
+      );
+  }
+
+  componentDidMount() {
+    modelInstance.addObserver(this);
+    this.sortingHat();
+  }
+
+  componentWillUnmount() {
+    modelInstance.removeObserver(this);
   }
 
   render() {
@@ -112,7 +131,7 @@ class Sorting extends Component {
         <br />
 
         <div className="card" id="random">
-          <Link to={"/sorted" + this.sortingHat}>
+          <Link to={"/sorted/house=?" + this.state.sortedHouse}>
             <div className="card-body row">
               <div className="col-6 cardText">
                 <h5 className="card-title">Random</h5>

@@ -48,6 +48,10 @@ class Sorted extends Component {
       });
   }
 
+  componentWillUnmount() {
+    modelInstance.removeObserver(this);
+  }
+
   render() {
     switch (this.state.status) {
       case "LOADING":
@@ -56,7 +60,7 @@ class Sorted extends Component {
         return (
           <div className="sorted" align="center">
             <h2>
-              Congratulations! You have been sorted into <br /> <br/> {" "}
+              Congratulations! You have been sorted into <br /> <br />{" "}
               {this.state.currentHouse}!
             </h2>
             <p>
