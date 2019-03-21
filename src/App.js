@@ -8,7 +8,6 @@ import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
 import NewSort from "./NewSort/NewSort";
 import "./App.css";
-import FullRecipe from "./Spells/Spells";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
 import Characters from "./Characters/Characters";
 class App extends Component {

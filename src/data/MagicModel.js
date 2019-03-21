@@ -42,10 +42,10 @@ class MagicModel extends ObservableModel {
     var ca = decodedCookie.split(";");
     for (var i = 0; i < ca.length; i++) {
       var c = ca[i];
-      while (c.charAt(0) == " ") {
+      while (c.charAt(0) === " ") {
         c = c.substring(1);
       }
-      if (c.indexOf(name) == 0) {
+      if (c.indexOf(name) === 0) {
         return c.substring(name.length, c.length);
       }
     }
@@ -67,7 +67,6 @@ class MagicModel extends ObservableModel {
     Object.keys(params).forEach(key =>
       url.searchParams.append(key, params[key])
     );
-    console.log(url);
 
     return fetch(url, {
       key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"

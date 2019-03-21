@@ -33,9 +33,18 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  align-content: flex-start;
 }
 
 .spells {
-  width: 27%;
+  width: 26%;
   padding-top: 2%;
+}
+
+#bookButton {
+  margin-top: -20%;
+  margin-left: 16%;
+  margin-right: 16%;
+  width: 16%;
+  font-weight: bold;
 }
