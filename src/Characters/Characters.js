@@ -7,6 +7,7 @@ class Characters extends Component {
   render() {
     return (
       <div className="sorting">
+      <h3 align="center">Click a house crest on the left to view members of that house</h3>
       <Link to="/people/gryffindors">
         <img
             src="https://vignette.wikia.nocookie.net/pottermore/images/1/16/Gryffindor_crest.png/revision/latest/scale-to-width-down/180?cb=20111112232412"
