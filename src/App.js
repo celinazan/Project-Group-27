@@ -8,8 +8,6 @@ import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
 import NewSort from "./NewSort/NewSort";
 import "./App.css";
-import DishView from "./DishView/DishView";
-import ConfirmView from "./ConfirmView/ConfirmView";
 import FullRecipe from "./Spells/Spells";
 import Characters from "./Characters/Characters";
 
@@ -59,21 +57,6 @@ class App extends Component {
             path="/people"
             render={() => <Characters model={modelInstance} />}
             />
-
-
-
-          <Route
-            path="/details/:id"
-            render={() => <DishView model={modelInstance} />}
-          />
-          <Route
-            path="/confirmDinner"
-            render={() => <ConfirmView model={modelInstance} />}
-          />
-          <Route
-            path="/fullRecipe"
-            render={() => <FullRecipe model={modelInstance} />}
-          />
         </header>
       </div>
     );
