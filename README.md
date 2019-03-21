@@ -51,7 +51,7 @@ Spells.js - Fetching all the spells from the API
 
 Characters.js - Code to be able to view the members of the different houses
 
-Spells.js - Fetching all the spells from the API
+LearnedSpells.js - 
 
 
 # TO-DO LIST (so we remember what to do)
