@@ -57,20 +57,6 @@ class App extends Component {
           />
 
           <Route
-            path="/details/:id"
-            render={() => <DishView model={modelInstance} />}
-          />
-
-          <Route
-            path="/confirmDinner"
-            render={() => <ConfirmView model={modelInstance} />}
-          />
-
-          <Route
-            path="/fullRecipe"
-            render={() => <FullRecipe model={modelInstance} />}
-          />
-          <Route
             path="/people"
             render={() => <Characters model={modelInstance} />}
           />
