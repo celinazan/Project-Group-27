@@ -35,6 +35,8 @@ Given that we have time, here are some more features we would like to add:
 Save favorite spells
 
 Add a small icon in the upper corner to show what house the user belongs to
+
+Add the house crest to the sorted page to match the house
    
   
 # File descriptions
