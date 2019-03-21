@@ -7,7 +7,7 @@ Emelia Johansson, Martin Lindberg, Celina Zander and Elias Åkerlund.
 
 # Project description
 
-(OBS that we decided to change our project since our first choice didn't have a working API.)
+(OBS that we had to/decided to change from our original project, since our first choice didn't have a working API)
 
 Our project is an application called "Hogwarts Study Tool", an app meant to help new students at Hogwarts School for Witchcraft and Wizardry with learning spells and keeping notes of what the spells do. A new student can use the page to look through what spells they will learn, as well as look up information about other students in their house as well as teachers from the four house at Hogwarts.
 
