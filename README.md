@@ -45,11 +45,11 @@ Sorting.js - Code for the sorting process
 
 Sorted.js - Code for showing the chosen house and saving that information for the user
 
-Home.js - Navigation page for reaching different functions
-
-NewSort.js - Similar to Sorting.js, modified for re-sorting
+Home.js - Navigation page for reaching different function
 
 Spells.js - Fetching all the spells from the API
+
+Characters.js - Code to be able to view the members of the different houses
 
 
 # TO-DO LIST (so we remember what to do)
@@ -66,6 +66,6 @@ Figure out how to make a unique background for the spells and people pages
 
 Place the spells, learned spells etc cards in a square like in the sketch 
 
-Fix so that houses are saved even after re-sorting ELIAS
+Make the spells, learned spells etc cards not clickable on entire screen, limit their width
 
-Make icons for houses clickable to display the members of that house
+Figure out what and how to save to backend
