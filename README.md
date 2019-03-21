@@ -45,11 +45,11 @@ Sorting.js - Code for the sorting process
 
 Sorted.js - Code for showing the chosen house and saving that information for the user
 
-Home.js - Navigation page for reaching different functions
-
-NewSort.js - Similar to Sorting.js, modified for re-sorting
+Home.js - Navigation page for reaching different function
 
 Spells.js - Fetching all the spells from the API
+
+Characters.js - Code to be able to view the members of the different houses
 
 
 # TO-DO LIST (so we remember what to do)
