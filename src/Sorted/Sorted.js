@@ -32,20 +32,24 @@ class Sorted extends Component {
   componentDidMount() {
     modelInstance.addObserver(this);
     this.setHouseCookie();
-
-    modelInstance
-      .fetchData("characters")
-      .then(people => {
-        this.setState({
-          status: "LOADED",
-          people: people
-        });
-      })
-      .catch(() => {
-        this.setState({
-          status: "ERROR"
-        });
-      });
+    setTimeout(
+      () =>
+        modelInstance
+          .fetchData("characters", this.state.currentHouse)
+          .then(people => {
+            this.setState({
+              status: "LOADED",
+              people: people
+            });
+          })
+          .catch(() => {
+            this.setState({
+              status: "ERROR"
+            });
+          }),
+      100
+    );
+    console.log("ravenclaw");
   }
 
   componentWillUnmount() {
