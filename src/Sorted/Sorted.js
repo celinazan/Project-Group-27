@@ -68,7 +68,7 @@ class Sorted extends Component {
             </h2>
             <div className="scroll row">
               <p className="col-12">
-              <br />
+              <br /><br />
                 Here is a list of some students also in{" "}
                 {this.state.currentHouse}, past and present:
               </p>
