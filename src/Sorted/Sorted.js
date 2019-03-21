@@ -67,14 +67,19 @@ class Sorted extends Component {
               Congratulations! You have been sorted into <br /> <br />{" "}
               {this.state.currentHouse}!
             </h2>
-            <p>
-              Here is a list of some students also in {this.state.currentHouse},
-              past and present:
-            </p>
-            <div className="col-sm-9" id="people">
-              {this.state.people.map(person => (
-                <div key={person._id}>{person.name}</div>
-              ))}
+            <div className="scroll row">
+              <p className="col-12">
+                Here is a list of some students also in{" "}
+                {this.state.currentHouse}, past and present:
+              </p>
+
+              <div id="people">
+                <ul id="dumb">
+                  {this.state.people.map(person => (
+                    <li key={person._id}>{person.name}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <br />
             <Link to="/home">
