@@ -49,7 +49,6 @@ class Sorted extends Component {
           }),
       100
     );
-    console.log("ravenclaw");
   }
 
   componentWillUnmount() {
