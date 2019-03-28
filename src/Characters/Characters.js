@@ -117,8 +117,8 @@ class Characters extends Component {
             <br />
             <br />
             <Link to="/home">
-              <button type="button" className="btn-sm btn-outline-light">
-                Back to Home
+              <button type="button" className="btn btn-outline-light">
+                Homepage
               </button>
             </Link>
 
