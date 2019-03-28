@@ -49,6 +49,20 @@ class Home extends Component {
         </div>
         <br />
 
+        <div className="card" id="OtherPeopleCard">
+          <Link to="/otherPeople">
+            <div className="card-body row">
+              <div className="col-12 cardText">
+                <h5 className="card-title">Other People</h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                  View other people in the Harry Potter-Universe
+                </h6>
+              </div>
+            </div>
+          </Link>
+        </div>
+        <br />
+
         <div className="card" id="sortingCard">
           <Link to="/search">
             <div className="card-body row">
