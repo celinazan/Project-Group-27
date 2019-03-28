@@ -66,6 +66,15 @@ class Sorted extends Component {
               Congratulations! You have been sorted into <br /> <br />{" "}
               {this.state.currentHouse}!
             </h2>
+            <br />
+            <div className="btn-place" align="center">
+            <Link to="/home">
+              <button type="button" className="btn btn-outline-light">
+                Start learning!
+              </button>
+            </Link>
+            </div>
+            <br />
             <div className="scroll row">
               <p className="col-12" align="center">
                 <br />
@@ -83,14 +92,6 @@ class Sorted extends Component {
                   ))}
                 </div>
               </div>
-            </div>
-            <br />
-            <div className="btn-place" align="center">
-            <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Start learning!
-              </button>
-            </Link>
             </div>
           </div>
         );
