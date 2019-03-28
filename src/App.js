@@ -6,7 +6,6 @@ import Sorting from "./Sorting/Sorting";
 import Sorted from "./Sorted/Sorted";
 import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
-import NewSort from "./NewSort/NewSort";
 import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
@@ -49,7 +48,10 @@ class App extends Component {
             render={() => <Spells model={modelInstance} />}
           />
 
-          <Route path="/home" render={() => <Home model={modelInstance} />} />
+          <Route 
+            path="/home" 
+            render={() => <Home model={modelInstance} />} 
+            />
 
           <Route
             path="/learnedSpells"
