@@ -63,8 +63,6 @@ Design a page for looking up people
 
 Design a page for adding info to spells the user has learned
 
-Place the spells, learned spells etc cards in a square like in the sketch 
-
 Make the spells, learned spells etc cards not clickable on entire screen, limit their width
 
 Figure out how to save to backend
