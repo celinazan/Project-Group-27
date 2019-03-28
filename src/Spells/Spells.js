@@ -78,7 +78,9 @@ class Spells extends Component {
             <div className="book">
               {this.state.spell.map(spell => (
                 <div className="spells" key={spell._id}>
-                  <Link to={"/learnedSpells"}>{spell.spell}</Link>
+                  <Link to={"/SpellDetail/spell=" + spell.spell}>
+                    {spell.spell}
+                  </Link>
                 </div>
               ))}
             </div>

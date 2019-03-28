@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import modelInstance from "../data/MagicModel";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import "./LearnedSpells.css";
+import "./SpellDetail.css";
 
-class LearnedSpells extends Component {
+class SpellDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -64,6 +64,14 @@ class LearnedSpells extends Component {
       });
   };
 
+  addToLearnedSpells = spell => {
+    alert(
+      "Hello! I am an alert box! When this work you have addded the " +
+        spell +
+        " spell to your learned spells"
+    );
+  };
+
   componentDidMount() {
     this.getSpell();
   }
@@ -85,12 +93,19 @@ class LearnedSpells extends Component {
               </div>
               <div className="rightPage">
                 <div className="headerRightPage">
-                  Enter your notes about this spell:
+                  <div className="black">
+                    This is a nice spell, but no deatils exist. <br />
+                    You can add it to your learned spells and add your own note.
+                  </div>
                 </div>
-                <textarea
-                  name="description"
-                  placeholder="Just press here and start typing to add your personal notes."
-                />
+                <button
+                  id="addSpellButton"
+                  type="button"
+                  className="btn btn-outline-dark"
+                  onClick={() => this.addToLearnedSpells()}
+                >
+                  Add
+                </button>
               </div>
             </div>
             <button
@@ -127,4 +142,4 @@ class LearnedSpells extends Component {
     }
   }
 }
-export default LearnedSpells;
+export default SpellDetail;

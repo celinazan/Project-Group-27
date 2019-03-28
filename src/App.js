@@ -7,6 +7,7 @@ import Sorted from "./Sorted/Sorted";
 import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
 import NewSort from "./NewSort/NewSort";
+import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
 import Characters from "./Characters/Characters";
@@ -36,6 +37,11 @@ class App extends Component {
           <Route
             path="/sorted/:house"
             render={() => <Sorted model={modelInstance} />}
+          />
+
+          <Route
+            path="/spellDetail"
+            render={() => <SpellDetail medel={modelInstance} />}
           />
 
           <Route
