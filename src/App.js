@@ -52,11 +52,6 @@ class App extends Component {
           <Route path="/home" render={() => <Home model={modelInstance} />} />
 
           <Route
-            path="/resort"
-            render={() => <NewSort model={modelInstance} />}
-          />
-
-          <Route
             path="/learnedSpells"
             render={() => <LearnedSpells model={modelInstance} />}
           />
