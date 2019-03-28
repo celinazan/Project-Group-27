@@ -25,3 +25,7 @@
   color: black;
   font-family: "Brush Script MT", "Arial Narrow", Arial, sans-serif;
 }
+
+body {
+  padding-bottom: 15px;
+}
