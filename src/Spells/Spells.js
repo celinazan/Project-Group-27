@@ -98,11 +98,13 @@ class Spells extends Component {
             >
               Next page
             </button>
+            <div className="btn-place" align="center">
             <Link to="/home">
               <button type="button" className="btn btn-outline-light">
                 Go back to homepage
               </button>
             </Link>
+            </div>
           </div>
         );
 

@@ -61,13 +61,22 @@ class Sorted extends Component {
         return <em>Loading spells...</em>;
       case "LOADED":
         return (
-          <div className="sorted" align="center">
-            <h2>
+          <div className="sorted">
+            <h2 align="center">
               Congratulations! You have been sorted into <br /> <br />{" "}
               {this.state.currentHouse}!
             </h2>
+            <br />
+            <div className="btn-place" align="center">
+            <Link to="/home">
+              <button type="button" className="btn btn-outline-light">
+                Start learning!
+              </button>
+            </Link>
+            </div>
+            <br />
             <div className="scroll row">
-              <p className="col-12">
+              <p className="col-12" align="center">
                 <br />
                 <br />
                 Here is a list of some students also in{" "}
@@ -84,12 +93,6 @@ class Sorted extends Component {
                 </div>
               </div>
             </div>
-            <br />
-            <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Start learning!
-              </button>
-            </Link>
           </div>
         );
       default:
