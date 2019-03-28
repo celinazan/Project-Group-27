@@ -82,58 +82,78 @@ class SpellDetail extends Component {
         return <em>Loading spells...</em>;
       case "LOADED":
         return (
-          <div className="page">
-            <div className="book">
-              <div className="leftPage">
-                {this.state.spell.map(spell => (
-                  <div className="spell" key={spell._id}>
-                    {spell.spell}
-                  </div>
-                ))}
-              </div>
-              <div className="rightPage">
-                <div className="headerRightPage">
-                  <div className="black">
-                    This is a nice spell, but no deatils exist. <br />
-                    You can add it to your learned spells and add your own note.
-                  </div>
-                </div>
-                <button
-                  id="addSpellButton"
-                  type="button"
-                  className="btn btn-outline-dark"
-                  onClick={() => this.addToLearnedSpells()}
-                >
-                  Add
-                </button>
-              </div>
-            </div>
-            <button
-              id="bookButton"
-              type="button"
-              className="btn btn-outline-light"
-              onClick={this.previousPage}
-            >
-              Previous spell
-            </button>
-            <button
-              id="bookButton"
-              type="button"
-              className="btn btn-outline-light"
-              onClick={this.nextPage}
-            >
-              Next spell
-            </button>
+          <div>
             <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Go back to homepage
+              <button
+                type="button"
+                className="btn btn-outline-light"
+                id="homeButton"
+              >
+                Homepage
               </button>
             </Link>
             <Link to="/Spells">
-              <button type="button" className="btn btn-outline-light">
-                Go back to all spells
+              <button
+                type="button"
+                className="btn btn-outline-light"
+                id="backToSpellsButton"
+              >
+                All spells
               </button>
             </Link>
+            <Link to="/learnedSpells">
+              <button
+                type="button"
+                className="btn btn-outline-light"
+                id="learnedSpellsButton"
+              >
+                Learned spells
+              </button>
+            </Link>
+            <div className="page">
+              <div className="book">
+                <div className="leftPage">
+                  {this.state.spell.map(spell => (
+                    <div className="spell" key={spell._id}>
+                      {spell.spell}
+                    </div>
+                  ))}
+                </div>
+                <div className="rightPage">
+                  <div className="headerRightPage">
+                    <div className="black">
+                      This is a nice spell, but no deatils exist. <br />
+                      You can add it to your learned spells and add your own
+                      note.
+                    </div>
+                  </div>
+                  <button
+                    id="addSpellButton"
+                    type="button"
+                    className="btn btn-outline-dark"
+                    onClick={() => this.addToLearnedSpells()}
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+              <button
+                id="bookButton"
+                type="button"
+                className="btn btn-outline-light"
+                onClick={this.previousPage}
+              >
+                Previous spell
+              </button>
+              <button
+                id="bookButton"
+                type="button"
+                className="btn btn-outline-light"
+                onClick={this.nextPage}
+              >
+                Next spell
+              </button>
+            </div>
           </div>
         );
 

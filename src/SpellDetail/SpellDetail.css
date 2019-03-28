@@ -63,3 +63,21 @@ textarea {
 #addSpellButton {
   margin-top: 10%;
 }
+
+#homeButton {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#backToSpellsButton {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+#learnedSpellsButton {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 15%;
+}

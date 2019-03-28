@@ -74,38 +74,51 @@ class Spells extends Component {
         return <em>Loading spells...</em>;
       case "LOADED":
         return (
-          <div className="page">
-            <div className="book">
-              {this.state.spell.map(spell => (
-                <div className="spells" key={spell._id}>
-                  <Link to={"/SpellDetail/spell=" + spell.spell}>
-                    {spell.spell}
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <button
-              id="bookButton"
-              type="button"
-              className="btn btn-outline-light"
-              onClick={this.previousPage}
-            >
-              Previous page
-            </button>
-            <button
-              id="bookButton"
-              type="button"
-              className="btn btn-outline-light"
-              onClick={this.nextPage}
-            >
-              Next page
-            </button>
-            <div className="btn-place" align="center">
+          <div>
             <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Go back to homepage
+              <button
+                type="button"
+                className="btn btn-outline-light"
+                id="homeButton"
+              >
+                Homepage
               </button>
             </Link>
+            <Link to="/learnedSpells">
+              <button
+                type="button"
+                className="btn btn-outline-light"
+                id="learnedSpellsButton10"
+              >
+                Learned spells
+              </button>
+            </Link>
+            <div className="page">
+              <div className="book">
+                {this.state.spell.map(spell => (
+                  <div className="spells" key={spell._id}>
+                    <Link to={"/SpellDetail/spell=" + spell.spell}>
+                      {spell.spell}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+              <button
+                id="bookButton"
+                type="button"
+                className="btn btn-outline-light"
+                onClick={this.previousPage}
+              >
+                Previous page
+              </button>
+              <button
+                id="bookButton"
+                type="button"
+                className="btn btn-outline-light"
+                onClick={this.nextPage}
+              >
+                Next page
+              </button>
             </div>
           </div>
         );

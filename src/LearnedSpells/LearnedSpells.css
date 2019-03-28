@@ -60,3 +60,15 @@ textarea {
 #addSpellButton {
   align-items: center;
 }
+
+#homeButton {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#AllSpellsButton {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 10%;
+}

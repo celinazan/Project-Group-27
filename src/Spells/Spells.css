@@ -2,21 +2,7 @@ h1 {
   padding-bottom: 10px;
 }
 
-#book {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 65%;
-  height: 65%;
-  z-index: -1;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
 .page {
-  width: 1000px;
-  height: 800px;
   margin: auto;
   background-size: contain;
   background-repeat: no-repeat;
@@ -47,4 +33,16 @@ h1 {
   margin-right: 16%;
   width: 16%;
   font-weight: bold;
+}
+
+#homeButton {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+#learnedSpellsButton10 {
+  position: fixed;
+  margin-left: 5%;
+  margin-top: 10%;
 }
