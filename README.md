@@ -17,6 +17,8 @@ A front page
 
 A small sorting ceremony to give the user a house, either randomly or by choice
 
+A page showing a list of members of the users house when they are sorted
+
 A way for the user to change house
 
 A way for the user to view all the spells provided by the API
