@@ -34,6 +34,15 @@ class OtherPeople extends Component {
           </div>
         </Link>
         <br />
+        <br />
+        <Link to="/home">
+          <button
+            type="button"
+            className="btn btn-outline-light"
+          >
+            Homepage
+          </button>
+        </Link>
       </div>
     );
   }
