@@ -96,7 +96,7 @@ class SpellDetail extends Component {
               <button
                 type="button"
                 className="btn btn-outline-light"
-                id="backToSpellsButton"
+                id="AllSpellsButton"
               >
                 All spells
               </button>
@@ -119,12 +119,12 @@ class SpellDetail extends Component {
                     </div>
                   ))}
                   {this.state.spell.map(spell => (
-                    <div className="type header" key={spell._id}>
+                    <div className="type header content" key={spell._id}>
                       Type: {spell.type}
                     </div>
                   ))}
                   {this.state.spell.map(spell => (
-                    <div className="effect header" key={spell._id}>
+                    <div className="effect header content" key={spell._id}>
                       Effect: {spell.effect}
                     </div>
                   ))}

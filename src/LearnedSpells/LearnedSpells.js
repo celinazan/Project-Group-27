@@ -101,16 +101,18 @@ class LearnedSpells extends Component {
                       {spell.spell}
                     </div>
                   ))}
-                  {this.state.spell.map(spell => (
-                    <div className="type header" key={spell._id}>
-                      Type: {spell.type}
-                    </div>
-                  ))}
-                  {this.state.spell.map(spell => (
-                    <div className="effect header" key={spell._id}>
-                      Effect: {spell.effect}
-                    </div>
-                  ))}
+                  <div className="content">
+                    {this.state.spell.map(spell => (
+                      <div className="type header" key={spell._id}>
+                        Type: {spell.type}
+                      </div>
+                    ))}
+                    {this.state.spell.map(spell => (
+                      <div className="effect header" key={spell._id}>
+                        Effect: {spell.effect}
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 <div className="rightPage">
                   <div className="header">
