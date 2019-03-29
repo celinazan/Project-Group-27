@@ -131,8 +131,7 @@ class SpellDetail extends Component {
                 </div>
                 <div className="rightPage">
                   <div className="header">
-                    This is a nice spell, but no deatils exist. You can add it
-                    to your learned spells and add your own note.
+                    You can add it to your learned spells and add your own note.
                   </div>
                   <button
                     id="addSpellButton"
