@@ -39,7 +39,7 @@ class Home extends Component {
           <Link to="/people">
             <div className="card-body row">
               <div className="col-12 cardText">
-                <h5 className="card-title">People</h5>
+                <h5 className="card-title">House Members</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   View other students and teachers of the four houses
                 </h6>
