@@ -118,14 +118,21 @@ class SpellDetail extends Component {
                       {spell.spell}
                     </div>
                   ))}
+                  {this.state.spell.map(spell => (
+                    <div className="type header" key={spell._id}>
+                      Type: {spell.type}
+                    </div>
+                  ))}
+                  {this.state.spell.map(spell => (
+                    <div className="effect header" key={spell._id}>
+                      Effect: {spell.effect}
+                    </div>
+                  ))}
                 </div>
                 <div className="rightPage">
-                  <div className="headerRightPage">
-                    <div className="black">
-                      This is a nice spell, but no deatils exist. <br />
-                      You can add it to your learned spells and add your own
-                      note.
-                    </div>
+                  <div className="header">
+                    This is a nice spell, but no deatils exist. You can add it
+                    to your learned spells and add your own note.
                   </div>
                   <button
                     id="addSpellButton"

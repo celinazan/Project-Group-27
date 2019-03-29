@@ -101,13 +101,24 @@ class LearnedSpells extends Component {
                       {spell.spell}
                     </div>
                   ))}
+                  {this.state.spell.map(spell => (
+                    <div className="type header" key={spell._id}>
+                      Type: {spell.type}
+                    </div>
+                  ))}
+                  {this.state.spell.map(spell => (
+                    <div className="effect header" key={spell._id}>
+                      Effect: {spell.effect}
+                    </div>
+                  ))}
                 </div>
                 <div className="rightPage">
-                  <div className="headerRightPage">
+                  <div className="header">
                     Enter your notes about this spell:
                   </div>
                   <textarea
                     name="description"
+                    className="black"
                     placeholder="Just press here and start typing to add your personal notes."
                   />
                 </div>

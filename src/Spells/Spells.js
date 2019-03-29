@@ -34,6 +34,7 @@ class Spells extends Component {
     modelInstance
       .fetchData("spells")
       .then(spell => {
+        console.log(spell);
         /* If statement to not get get blank pages if you go to far*/
         if (this.state.spellIndex > 112) {
           this.setState({

@@ -25,6 +25,10 @@ h1 {
 .spells {
   width: 26%;
   padding-top: 2%;
+  font-family: "Waiting for the Sunrise", cursive;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 3px;
 }
 
 #bookButton {
