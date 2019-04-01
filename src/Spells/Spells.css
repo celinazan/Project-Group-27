@@ -5,6 +5,11 @@
   background-image: url("https://dumielauxepices.net/sites/default/files/scripture-clipart-open-book-outline-758548-6378382.png");
 }
 
+h3 {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+
 .book {
   padding-left: 11%;
   padding-top: 7%;

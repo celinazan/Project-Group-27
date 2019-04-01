@@ -46,7 +46,9 @@ class App extends Component {
             render={() => <Spells model={modelInstance} />}
           />
 
-          <Route path="/home" render={() => <Home model={modelInstance} />} />
+          <Route 
+            path="/home" 
+            render={() => <Home model={modelInstance} />} />
 
           <Route
             path="/otherPeople"

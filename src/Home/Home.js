@@ -21,8 +21,8 @@ class Home extends Component {
         </div>
         <br />
 
-        <Link to="/learnedSpells">
-          <div className="card" id="learnedCard">
+        <div className="card" id="learnedCard">
+          <Link to="/learnedSpells">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">Learned Spells</h5>
@@ -31,8 +31,8 @@ class Home extends Component {
                 </h6>
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
         <br />
 
         <div className="card" id="peopleCard">
