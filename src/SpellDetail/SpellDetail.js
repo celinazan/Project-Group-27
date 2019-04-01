@@ -34,8 +34,10 @@ class SpellDetail extends Component {
     modelInstance
       .fetchDataID(id)
       .then(spell => {
-        /* If statement to not get get blank pages if you go to far*/
-        console.log(spell);
+        this.setState({
+          spell: spell,
+          status: "LOADED"
+        });
       })
       .catch(() => {
         this.setState({

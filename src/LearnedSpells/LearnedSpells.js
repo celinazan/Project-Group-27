@@ -150,12 +150,18 @@ class LearnedSpells extends Component {
                   <div className="header">
                     Enter your notes about this spell:
                   </div>
-                  <textarea
-                    name="description"
-                    className="black"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                  />
+                  <form onSubmit={this.handleSubmit}>
+                    <label>
+                      Essay:
+                      <textarea
+                        name="description"
+                        className="black"
+                        value={this.state.value}
+                        on={this.handleChange}
+                      />
+                    </label>
+                    <input type="submit" value="Submit" />
+                  </form>
                 </div>
               </div>
               <button
