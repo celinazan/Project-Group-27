@@ -3,19 +3,6 @@ import modelInstance from "../data/MagicModel";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./SpellDetail.css";
-import firebase from "firebase";
-
-// Initialize Firebase
-// TODO: Replace with your project's customized code snippet
-var config = {
-  apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U",
-  authDomain: "hogwarts-study-tool.firebaseapp.com",
-  databaseURL: "https://hogwarts-study-tool.firebaseio.com",
-  storageBucket: "hogwarts-study-tool.appspot.com"
-};
-firebase.initializeApp(config);
-
-console.log(firebase);
 
 class SpellDetail extends Component {
   constructor(props) {

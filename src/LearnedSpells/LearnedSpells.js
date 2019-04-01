@@ -3,6 +3,16 @@ import modelInstance from "../data/MagicModel";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./LearnedSpells.css";
+import firebase from "firebase/app";
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U",
+  authDomain: "hogwarts-study-tool.firebaseapp.com",
+  databaseURL: "https://hogwarts-study-tool.firebaseio.com",
+  storageBucket: "hogwarts-study-tool.appspot.com"
+};
+firebase.initializeApp(config);
 
 class LearnedSpells extends Component {
   constructor(props) {
@@ -10,8 +20,23 @@ class LearnedSpells extends Component {
     this.state = {
       status: "LOADING",
       spellIndex: 0,
-      offset: 1
+      offset: 1,
+      value: "Just press here and start typing to add your personal notes."
     };
+  }
+
+  writeUserData = (userId, name) => {
+    firebase
+      .database()
+      .ref("users/" + userId)
+      .set({
+        username: name
+      });
+  };
+
+  handleChange(event) {
+    console.log(event);
+    this.setState({ value: event.target.value });
   }
 
   nextPage = () => {
@@ -62,6 +87,13 @@ class LearnedSpells extends Component {
           status: "ERROR"
         });
       });
+  };
+
+  writeUserData = (name, email) => {
+    firebase.database().set({
+      username: name,
+      email: email
+    });
   };
 
   componentDidMount() {
@@ -121,7 +153,8 @@ class LearnedSpells extends Component {
                   <textarea
                     name="description"
                     className="black"
-                    placeholder="Just press here and start typing to add your personal notes."
+                    value={this.state.value}
+                    onChange={this.handleChange}
                   />
                 </div>
               </div>
