@@ -3,39 +3,37 @@ import modelInstance from "../data/MagicModel";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./SpellDetail.css";
+import firebase from "firebase";
+
+// Initialize Firebase
+// TODO: Replace with your project's customized code snippet
+var config = {
+  apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U",
+  authDomain: "hogwarts-study-tool.firebaseapp.com",
+  databaseURL: "https://hogwarts-study-tool.firebaseio.com",
+  storageBucket: "hogwarts-study-tool.appspot.com"
+};
+firebase.initializeApp(config);
+
+console.log(firebase);
 
 class SpellDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
       status: "LOADING",
-      spellIndex: 0,
-      offset: 1
+      spell: []
     };
   }
-
-  nextPage = () => {
-    this.setState({
-      spellIndex: this.state.spellIndex + 1,
-      offset: this.state.offset + 1
-    });
-    this.getSpell();
-  };
-
-  previousPage = () => {
-    this.setState({
-      spellIndex: this.state.spellIndex - 1,
-      offset: this.state.offset - 1
-    });
-    this.getSpell();
-  };
 
   getSpell = id => {
     modelInstance
       .fetchDataID(id)
       .then(spell => {
-        /* If statement to not get get blank pages if you go to far*/
-        console.log(spell);
+        this.setState({
+          status: "LOADED",
+          spell: spell
+        });
       })
       .catch(() => {
         this.setState({
@@ -123,22 +121,6 @@ class SpellDetail extends Component {
                   </button>
                 </div>
               </div>
-              <button
-                id="bookButton"
-                type="button"
-                className="btn btn-outline-light"
-                onClick={this.previousPage}
-              >
-                Previous spell
-              </button>
-              <button
-                id="bookButton"
-                type="button"
-                className="btn btn-outline-light"
-                onClick={this.nextPage}
-              >
-                Next spell
-              </button>
             </div>
           </div>
         );
