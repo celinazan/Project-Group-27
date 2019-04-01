@@ -71,15 +71,11 @@ class DeathEaters extends Component {
       case "LOADED":
         return (
           <div className="sorted">
-            <h2 align="center">
-              Congratulations! You have been sorted into <br /> <br />{" "}
-              {this.state.currentHouse}!
-            </h2>
             <br />
             <div className="btn-place" align="center">
             <Link to="/home">
               <button type="button" className="btn btn-outline-light">
-                Start learning!
+                Go Back
               </button>
             </Link>
             </div>
@@ -88,8 +84,7 @@ class DeathEaters extends Component {
               <p className="col-12" align="center">
                 <br />
                 <br />
-                Here is a list of some students also in{" "}
-                {this.state.currentHouse}, past and present:
+                Here is a list of all Death Eaters
               </p>
 
               <div id="people">

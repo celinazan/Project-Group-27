@@ -71,10 +71,6 @@ class MinistryEmployees extends Component {
       case "LOADED":
         return (
           <div className="sorted">
-            <h2 align="center">
-              Congratulations! You have been sorted into <br /> <br />{" "}
-              {this.state.currentHouse}!
-            </h2>
             <br />
             <div className="btn-place" align="center">
             <Link to="/home">
@@ -88,8 +84,7 @@ class MinistryEmployees extends Component {
               <p className="col-12" align="center">
                 <br />
                 <br />
-                Here is a list of some students also in{" "}
-                {this.state.currentHouse}, past and present:
+                Here is a list of employees at the Ministry of Magic!
               </p>
 
               <div id="people">
