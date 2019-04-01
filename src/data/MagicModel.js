@@ -73,6 +73,20 @@ class MagicModel extends ObservableModel {
     }).then(this.processResponse);
   }
 
+  fetchDataID(id) {
+    const url = new URL("https://www.potterapi.com/v1/spells/" + id),
+      params = {
+        key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
+      };
+    Object.keys(params).forEach(key =>
+      url.searchParams.append(key, params[key])
+    );
+
+    return fetch(url, {
+      key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
+    }).then(this.processResponse);
+  }
+
   processResponse(response) {
     if (response.ok) {
       return response.json();

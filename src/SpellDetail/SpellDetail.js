@@ -30,32 +30,12 @@ class SpellDetail extends Component {
     this.getSpell();
   };
 
-  getSpell = () => {
+  getSpell = id => {
     modelInstance
-      .fetchData("spells")
+      .fetchDataID(id)
       .then(spell => {
         /* If statement to not get get blank pages if you go to far*/
-        if (this.state.spellIndex > 150) {
-          this.setState({
-            status: "LOADED",
-            spellIndex: 150,
-            offset: 151,
-            spell: spell.slice(150, 151)
-          });
-        }
-        if (this.state.spellIndex < 0) {
-          this.setState({
-            status: "LOADED",
-            spellIndex: 0,
-            offset: 1,
-            spell: spell.slice(0, 1)
-          });
-        } else {
-          this.setState({
-            status: "LOADED",
-            spell: spell.slice(this.state.spellIndex, this.state.offset)
-          });
-        }
+        console.log(spell);
       })
       .catch(() => {
         this.setState({
@@ -73,7 +53,7 @@ class SpellDetail extends Component {
   };
 
   componentDidMount() {
-    this.getSpell();
+    this.getSpell(this.props.match.params.spellId);
   }
 
   render() {

@@ -39,10 +39,7 @@ class App extends Component {
             render={() => <Sorted model={modelInstance} />}
           />
 
-          <Route
-            path="/spellDetail"
-            render={() => <SpellDetail medel={modelInstance} />}
-          />
+          <Route path="/spellDetail/:spellId" component={SpellDetail} />
 
           <Route
             path="/spells"
