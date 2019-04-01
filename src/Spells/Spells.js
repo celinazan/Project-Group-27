@@ -76,6 +76,9 @@ class Spells extends Component {
       case "LOADED":
         return (
           <div>
+            <div className="position" align="center">
+            <h3>Click a spell for more details</h3>
+            </div>
             <Link to="/home">
               <button
                 type="button"
