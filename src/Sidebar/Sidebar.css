@@ -1,0 +1,39 @@
+#sideb {
+  float: left;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 5px;
+  padding: 0%;
+  padding-right: 10px;
+}
+
+#navId {
+  padding: 0%;
+  padding-left: 8%;
+}
+
+.removeButtonClass {
+  height: 40px;
+}
+
+#summaryDiv {
+  border-style: double;
+  border-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: rgb(253, 211, 211);
+  flex-direction: row;
+  padding: 0px;
+  font-weight: 560;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.selectedDish {
+  padding-bottom: 7px;
+  padding-top: 3px;
+  border-bottom-style: solid;
+}
+
+.navbar-collapse.collapse.in {
+  display: block !important;
+}

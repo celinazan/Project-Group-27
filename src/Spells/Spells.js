@@ -34,6 +34,7 @@ class Spells extends Component {
     modelInstance
       .fetchData("spells")
       .then(spell => {
+        console.log(spell);
         /* If statement to not get get blank pages if you go to far*/
         if (this.state.spellIndex > 112) {
           this.setState({
@@ -76,7 +77,7 @@ class Spells extends Component {
         return (
           <div>
             <div className="position" align="center">
-              <h3>Click a spell for more details</h3>
+            <h3>Click a spell for more details</h3>
             </div>
             <Link to="/home">
               <button
