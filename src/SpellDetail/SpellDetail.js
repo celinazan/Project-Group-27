@@ -9,18 +9,33 @@ class SpellDetail extends Component {
     super(props);
     this.state = {
       status: "LOADING",
-      spell: []
+      spellIndex: 0,
+      offset: 1
     };
   }
+
+  nextPage = () => {
+    this.setState({
+      spellIndex: this.state.spellIndex + 1,
+      offset: this.state.offset + 1
+    });
+    this.getSpell();
+  };
+
+  previousPage = () => {
+    this.setState({
+      spellIndex: this.state.spellIndex - 1,
+      offset: this.state.offset - 1
+    });
+    this.getSpell();
+  };
 
   getSpell = id => {
     modelInstance
       .fetchDataID(id)
       .then(spell => {
-        this.setState({
-          status: "LOADED",
-          spell: spell
-        });
+        /* If statement to not get get blank pages if you go to far*/
+        console.log(spell);
       })
       .catch(() => {
         this.setState({
@@ -108,6 +123,22 @@ class SpellDetail extends Component {
                   </button>
                 </div>
               </div>
+              <button
+                id="bookButton"
+                type="button"
+                className="btn btn-outline-light"
+                onClick={this.previousPage}
+              >
+                Previous spell
+              </button>
+              <button
+                id="bookButton"
+                type="button"
+                className="btn btn-outline-light"
+                onClick={this.nextPage}
+              >
+                Next spell
+              </button>
             </div>
           </div>
         );

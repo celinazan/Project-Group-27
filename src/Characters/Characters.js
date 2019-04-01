@@ -36,16 +36,16 @@ class Characters extends Component {
   }
 
   loadPeople() {
-    if (window.location.search !== "") {
+    if (window.location.search != "") {
       var currentURL = window.location.search.replace("?", "");
       modelInstance
         .fetchData("characters", currentURL)
         .then(people => {
-          console.log(people);
           this.setState({
             status: "LOADED",
             students: people
-          });
+          }),
+            console.log(people);
         })
         .catch(() => {
           this.setState({
