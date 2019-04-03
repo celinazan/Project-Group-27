@@ -11,7 +11,6 @@ class Sorted extends Component {
     // e.g. API data loading or error
     this.state = {
       status: "LOADING",
-
       currentHouse: modelInstance.getHouse()
     };
     this.setHouseCookie = this.setHouseCookie.bind(this);

@@ -8,7 +8,7 @@ class OtherPeople extends Component {
     return (
       <div className="sorting" align="center">
         <div className="card" id="deathEaterCard">
-          <Link to="/deathEaters">
+          <Link to="/deatheaters">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">Death Eaters</h5>
@@ -36,10 +36,7 @@ class OtherPeople extends Component {
         <br />
         <br />
         <Link to="/home">
-          <button
-            type="button"
-            className="btn btn-outline-light"
-          >
+          <button type="button" className="btn btn-outline-light">
             Homepage
           </button>
         </Link>

@@ -11,6 +11,7 @@ import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
 import Characters from "./Characters/Characters";
+import DeathEaters from "./OtherPeople/deathEaters";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -37,6 +38,9 @@ class App extends Component {
             render={() => <Sorted model={modelInstance} />}
           />
           <Route path="/spellDetail/:spellId" component={SpellDetail} />
+
+          <Route path="/deatheaters" component={DeathEaters} />
+
           <Route
             path="/spells"
             render={() => <Spells model={modelInstance} />}

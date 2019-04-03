@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./deathEaters.css";
 import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
@@ -11,23 +10,15 @@ class DeathEaters extends Component {
     // e.g. API data loading or error
     this.state = {
       status: "LOADING",
-      peopleList: [],
-      currentHouse: modelInstance.getHouse()
+      peopleList: []
     };
-    this.setHouseCookie = this.setHouseCookie.bind(this);
-  }
-
-  setHouseCookie() {
-    var currentURL = window.location.search.replace("?", "");
-    modelInstance.newCookie("house", currentURL);
-    modelInstance.setHouse();
   }
 
   checkIfDeatheater() {
-    var deList = []
+    var deList = [];
     for (var x in this.state.peopleList) {
-      if( this.state.peopleList[x].deathEater == true){
-        deList.push(this.state.peopleList[x])
+      if (this.state.peopleList[x].deathEater == true) {
+        deList.push(<li>{this.state.peopleList[x]}</li>);
       }
     }
   }
@@ -40,24 +31,20 @@ class DeathEaters extends Component {
 
   componentDidMount() {
     modelInstance.addObserver(this);
-    this.setHouseCookie();
-    setTimeout(
-      () =>
-        modelInstance
-          .fetchData("characters", this.state.currentHouse)
-          .then(people => {
-            this.setState({
-              status: "LOADED",
-              peopleList: people
-            });
-          })
-          .catch(() => {
-            this.setState({
-              status: "ERROR"
-            });
-          }),
-      100
-    );
+    modelInstance
+      .fetchData("characters")
+      .then(people => {
+        this.setState({
+          status: "LOADED",
+          peopleList: people
+        }),
+          console.log(people);
+      })
+      .catch(() => {
+        this.setState({
+          status: "ERROR"
+        });
+      });
   }
 
   componentWillUnmount() {
@@ -73,11 +60,11 @@ class DeathEaters extends Component {
           <div className="sorted">
             <br />
             <div className="btn-place" align="center">
-            <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Go Back
-              </button>
-            </Link>
+              <Link to="/home">
+                <button type="button" className="btn btn-outline-light">
+                  Go Back
+                </button>
+              </Link>
             </div>
             <br />
             <div className="scroll row">
@@ -89,7 +76,7 @@ class DeathEaters extends Component {
 
               <div id="people">
                 <div id="dumb">
-                  {this.state.people.map(person => (
+                  {this.state.peopleList.map(person => (
                     <p id="peopleList" key={person._id}>
                       {person.name}
                     </p>
