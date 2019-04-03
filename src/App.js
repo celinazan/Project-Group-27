@@ -26,44 +26,31 @@ class App extends Component {
           <h1 className="App-title" align="center">
             {this.state.title}
           </h1>
-
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome} />
           <Route
             path="/search"
             render={() => <Sorting model={modelInstance} />}
           />
-
           <Route
             path="/sorted/:house"
             render={() => <Sorted model={modelInstance} />}
           />
-
           <Route path="/spellDetail/:spellId" component={SpellDetail} />
-
           <Route
             path="/spells"
             render={() => <Spells model={modelInstance} />}
           />
-
-          <Route 
-            path="/home" 
-            render={() => <Home model={modelInstance} />} />
-
+          <Route path="/home" render={() => <Home model={modelInstance} />} />
           <Route
             path="/otherPeople"
             render={() => <OtherPeople model={modelInstance} />}
           />
-
           <Route
             path="/learnedSpells"
             render={() => <LearnedSpells model={modelInstance} />}
           />
-
-          <Route
-            path="/people"
-            render={() => <Characters model={modelInstance} />}
-          />
+          <Route path="/people/:house" component={Characters} />
         </header>
       </div>
     );
