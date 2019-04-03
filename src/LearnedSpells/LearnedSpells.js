@@ -21,8 +21,7 @@ class LearnedSpells extends Component {
       status: "LOADING",
       spellIndex: 0,
       offset: 1,
-      value: "Just press here and start typing to add your personal notes.",
-      // notes: ""
+      value: "Just press here and start typing to add your personal notes."
     };
   }
 
@@ -104,11 +103,7 @@ class LearnedSpells extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return (
-          <div className="lds-circle center">
-            <div />
-          </div>
-        );
+        return <em>Loading spells...</em>;
       case "LOADED":
         return (
           <div>

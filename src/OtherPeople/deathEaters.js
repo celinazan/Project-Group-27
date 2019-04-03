@@ -17,16 +17,10 @@ class DeathEaters extends Component {
     this.setHouseCookie = this.setHouseCookie.bind(this);
   }
 
-  setHouseCookie() {
-    var currentURL = window.location.search.replace("?", "");
-    modelInstance.newCookie("house", currentURL);
-    modelInstance.setHouse();
-  }
-
   checkIfDeatheater() {
     var deList = []
     for (var x in this.state.peopleList) {
-      if( this.state.peopleList[x].deathEater == true){
+      if (this.state.peopleList[x].deathEater == true){
         deList.push(this.state.peopleList[x])
       }
     }
@@ -40,7 +34,7 @@ class DeathEaters extends Component {
 
   componentDidMount() {
     modelInstance.addObserver(this);
-    this.setHouseCookie();
+    console.log("this.state.currentHouse")
     setTimeout(
       () =>
         modelInstance
