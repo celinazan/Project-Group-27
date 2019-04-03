@@ -61,6 +61,9 @@ Characters.js - Code to be able to view the members of the different houses
 
 LearnedSpells.js - 
 
+SpellDetails.js - 
+
+OtherPeople.js - 
 
 # TO-DO LIST (so we remember what to do)
 
