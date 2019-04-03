@@ -57,11 +57,7 @@ class Sorted extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return (
-          <div className="lds-circle center">
-            <div />
-          </div>
-        );
+        return <em>Loading spells...</em>;
       case "LOADED":
         return (
           <div className="sorted">
@@ -71,11 +67,11 @@ class Sorted extends Component {
             </h2>
             <br />
             <div className="btn-place" align="center">
-              <Link to="/home">
-                <button type="button" className="btn btn-outline-light">
-                  Start learning!
-                </button>
-              </Link>
+            <Link to="/home">
+              <button type="button" className="btn btn-outline-light">
+                Start learning!
+              </button>
+            </Link>
             </div>
             <br />
             <div className="scroll row">

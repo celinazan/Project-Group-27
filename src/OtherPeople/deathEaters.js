@@ -18,7 +18,7 @@ class DeathEaters extends Component {
     var deList = [];
     for (var x in this.state.peopleList) {
       if (this.state.peopleList[x].deathEater == true) {
-        deList.push(<li>{this.state.peopleList[x]}</li>);
+        deList.push(this.state.peopleList[x]);
       }
     }
   }
