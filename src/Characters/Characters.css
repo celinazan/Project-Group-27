@@ -3,6 +3,17 @@ img {
   padding-top: 10px;
 }
 
+h1 {
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+  color: white;
+  font-size: 22pt;
+  font-family: "Brush Script MT", "Arial Narrow", Arial, sans-serif;
+}
+
 h3 {
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -12,7 +23,7 @@ h3 {
   list-style-type: none;
   height: auto;
   color: white;
-  columns: 2;
+  columns: 3;
 }
 
 #houses {

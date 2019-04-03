@@ -21,7 +21,8 @@ class LearnedSpells extends Component {
       status: "LOADING",
       spellIndex: 0,
       offset: 1,
-      value: "Just press here and start typing to add your personal notes."
+      value: "Just press here and start typing to add your personal notes.",
+      // notes: ""
     };
   }
 
