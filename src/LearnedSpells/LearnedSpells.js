@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import modelInstance from "../data/MagicModel";
+
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./LearnedSpells.css";
-import firebase from "firebase/app";
-
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U",
-  authDomain: "hogwarts-study-tool.firebaseapp.com",
-  databaseURL: "https://hogwarts-study-tool.firebaseio.com",
-  storageBucket: "hogwarts-study-tool.appspot.com"
-};
-firebase.initializeApp(config);
+import modelInstance from "../data/MagicModel";
+import firebase from "firebase";
 
 class LearnedSpells extends Component {
   constructor(props) {
@@ -21,22 +13,19 @@ class LearnedSpells extends Component {
       status: "LOADING",
       spellIndex: 0,
       offset: 1,
-      value: "Just press here and start typing to add your personal notes."
+      message: ["test"]
     };
-  }
-
-  writeUserData = (userId, name) => {
-    firebase
-      .database()
-      .ref("users/" + userId)
-      .set({
-        username: name
-      });
-  };
-
-  handleChange(event) {
-    console.log(event);
-    this.setState({ value: event.target.value });
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U",
+      authDomain: "hogwarts-study-tool.firebaseapp.com",
+      databaseURL: "https://hogwarts-study-tool.firebaseio.com",
+      projectId: "hogwarts-study-tool",
+      storageBucket: "hogwarts-study-tool.appspot.com",
+      messagingSenderId: "755168622286"
+    };
+    firebase.initializeApp(config);
+    console.log(firebase);
   }
 
   nextPage = () => {
@@ -89,15 +78,31 @@ class LearnedSpells extends Component {
       });
   };
 
-  writeUserData = (name, email) => {
-    firebase.database().set({
-      username: name,
-      email: email
-    });
-  };
-
   componentDidMount() {
     this.getSpell();
+  }
+
+  componentWillMount() {
+    /* Create reference to messages in Firebase Database */
+    let messagesRef = firebase
+      .database()
+      .ref("messages")
+      .orderByKey()
+      .limitToLast(100);
+    messagesRef.on("child_added", snapshot => {
+      /* Update React state when message is added at Firebase Database */
+      let message = { text: snapshot.val(), id: snapshot.key };
+      this.setState({ messages: [message].concat(this.state.messages) });
+    });
+  }
+  addMessage(e) {
+    e.preventDefault(); // <- prevent form submit from reloading the page
+    /* Send the message to Firebase */
+    firebase
+      .database()
+      .ref("messages")
+      .push(this.inputEl.value);
+    this.inputEl.value = ""; // <- clear the input
   }
 
   render() {
@@ -154,17 +159,9 @@ class LearnedSpells extends Component {
                   <div className="header">
                     Enter your notes about this spell:
                   </div>
-                  <form onSubmit={this.handleSubmit}>
-                    <label>
-                      Essay:
-                      <textarea
-                        name="description"
-                        className="black"
-                        value={this.state.value}
-                        on={this.handleChange}
-                      />
-                    </label>
-                    <input type="submit" value="Submit" />
+                  <form onSubmit={this.addMessage.bind(this)}>
+                    <input type="text" ref={el => (this.inputEl = el)} />
+                    <input type="submit" />
                   </form>
                 </div>
               </div>
