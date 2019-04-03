@@ -10,12 +10,19 @@ class OtherPeople extends Component {
         <div className="card" id="deathEaterCard">
           <Link to="/deathEaters">
             <div className="card-body row">
-              <div className="col-12 cardText">
+              <div className="col-6 cardText">
                 <h5 className="card-title">Death Eaters</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   See a list of all known Death Eaters
                 </h6>
               </div>
+              <div className="col-6">
+                <img
+                  src="http://tonobanquetes.com/images/death-eater-tattoo/death-eater-tattoo-12.jpg"
+                  alt="darkmark"
+                  height="125px"
+                />
+                </div>
             </div>
           </Link>
         </div>
@@ -24,12 +31,21 @@ class OtherPeople extends Component {
         <Link to="/ministryEmployees">
           <div className="card" id="ministryCard">
             <div className="card-body row">
-              <div className="col-12 cardText">
+              <div className="col-6 cardText">
                 <h5 className="card-title">Ministry of Magic</h5>
                 <h6 className="card-subtitle mb-2 text-muted">
                   View employees at the Ministry of Magic
                 </h6>
               </div>
+              <div className="col-6">
+                <img
+                  src="http://media.kotaku.foxtrot.future.net.uk/wp-content/uploads/sites/52/2015/05/Ministry_of_magic_logo.png
+                  "
+                  alt="ministrylogo"
+                  height="100px"
+                  width="120px"
+                />
+                </div>
             </div>
           </div>
         </Link>
