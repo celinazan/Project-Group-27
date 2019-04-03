@@ -13,7 +13,6 @@ import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
 import Characters from "./Characters/Characters";
-import DeathEaters from "./OtherPeople/deathEaters";
 class App extends Component {
   constructor(props) {
     super(props);
