@@ -14,22 +14,6 @@ class SpellDetail extends Component {
     };
   }
 
-  nextPage = () => {
-    this.setState({
-      spellIndex: this.state.spellIndex + 1,
-      offset: this.state.offset + 1
-    });
-    this.getSpell();
-  };
-
-  previousPage = () => {
-    this.setState({
-      spellIndex: this.state.spellIndex - 1,
-      offset: this.state.offset - 1
-    });
-    this.getSpell();
-  };
-
   getSpell = id => {
     modelInstance
       .fetchDataID(id)
@@ -61,7 +45,11 @@ class SpellDetail extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return <em>Loading spells...</em>;
+        return (
+          <div className="lds-circle center">
+            <div />
+          </div>
+        );
       case "LOADED":
         return (
           <div>
@@ -125,22 +113,6 @@ class SpellDetail extends Component {
                   </button>
                 </div>
               </div>
-              <button
-                id="bookButton"
-                type="button"
-                className="btn btn-outline-light"
-                onClick={this.previousPage}
-              >
-                Previous spell
-              </button>
-              <button
-                id="bookButton"
-                type="button"
-                className="btn btn-outline-light"
-                onClick={this.nextPage}
-              >
-                Next spell
-              </button>
             </div>
           </div>
         );

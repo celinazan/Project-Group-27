@@ -72,7 +72,11 @@ class Spells extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return <em>Loading spells...</em>;
+        return (
+          <div className="lds-circle center">
+            <div />
+          </div>
+        );
       case "LOADED":
         return (
           <div>
