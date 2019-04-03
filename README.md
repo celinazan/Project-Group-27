@@ -23,13 +23,16 @@ A way for the user to change house
 
 A way for the user to view all the spells provided by the API
 
+A way for the user to view all the characters and members of the different houses
+
 .
 
 We still want to add the following features:
 
-A way for the user to view all the characters and members of the different houses
 
 A way for the user to add descriptions to spells that they've learned
+
+A way for the user to view characters outside of the houses (ministry workers and death eaters)
   
 .
 
@@ -58,11 +61,12 @@ Characters.js - Code to be able to view the members of the different houses
 
 LearnedSpells.js - 
 
+SpellDetails.js - 
+
+OtherPeople.js - 
 
 # TO-DO LIST (so we remember what to do)
 
-Design a page for looking up people
+Design a page for viewing the spells that the user has learned, right now it is a copy of adding notes to spells
 
-Design a page for adding info to spells the user has learned
-
-Figure out how to save to backend
+Figure out how to work with Firebase, how to save what is written and access it
