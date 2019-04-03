@@ -61,9 +61,11 @@ class MagicModel extends ObservableModel {
   fetchData(parameter, theHouse) {
     const url = new URL("https://www.potterapi.com/v1/" + parameter),
       params = {
-        key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u",
-        house: theHouse
+        key: "$2a$10$m6QOfeafHLsNSQwkY0R3W.IYHFedzSzSA/rGvUKy.oU3u690yEx.u"
       };
+    if (theHouse) {
+      params["house"] = theHouse;
+    }
     Object.keys(params).forEach(key =>
       url.searchParams.append(key, params[key])
     );

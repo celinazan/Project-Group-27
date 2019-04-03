@@ -108,11 +108,7 @@ class LearnedSpells extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return (
-          <div className="lds-circle center">
-            <div />
-          </div>
-        );
+        return <em>Loading spells...</em>;
       case "LOADED":
         return (
           <div>

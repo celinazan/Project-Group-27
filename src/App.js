@@ -7,10 +7,13 @@ import Sorted from "./Sorted/Sorted";
 import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
 import OtherPeople from "./OtherPeople/otherPeople";
+import DeathEaters from "./Otherpeople/deathEaters";
+import MinistryEmployees from "./OtherPeople/ministryEmployees";
 import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
 import Characters from "./Characters/Characters";
+import DeathEaters from "./OtherPeople/deathEaters";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -26,31 +29,54 @@ class App extends Component {
           <h1 className="App-title" align="center">
             {this.state.title}
           </h1>
+
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" component={Welcome} />
           <Route
             path="/search"
             render={() => <Sorting model={modelInstance} />}
           />
+
           <Route
             path="/sorted/:house"
             render={() => <Sorted model={modelInstance} />}
           />
+
           <Route path="/spellDetail/:spellId" component={SpellDetail} />
+
+          <Route path="/deatheaters" component={DeathEaters} />
+
           <Route
             path="/spells"
             render={() => <Spells model={modelInstance} />}
           />
+
           <Route path="/home" render={() => <Home model={modelInstance} />} />
+
           <Route
             path="/otherPeople"
             render={() => <OtherPeople model={modelInstance} />}
           />
+
+          <Route
+            path="/deatheaters"
+            render={() => <DeathEaters model={modelInstance} />}
+          />
+
+          <Route
+            path="/ministryEmployees"
+            render={() => <MinistryEmployees model={modelInstance} />}
+          />
+
           <Route
             path="/learnedSpells"
             render={() => <LearnedSpells model={modelInstance} />}
           />
-          <Route path="/people/:house" component={Characters} />
+
+          <Route
+            path="/people"
+            render={() => <Characters model={modelInstance} />}
+          />
         </header>
       </div>
     );

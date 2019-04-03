@@ -75,15 +75,18 @@ class Characters extends Component {
     }
     return (
       <div className="characters">
+      <br />
         <h3
           align="center"
           onChange={this.checkChange(this.props.match.params.house)}
         >
-          Click a house crest on the left to view members of that house{" "}
+          Click a house crest on the left to view members of that house!{" "}
         </h3>
-        <h3 align="center">
+        <br />
+        <h2 align="center">
           {modelInstance.toTitleCase(this.props.match.params.house)} house
-        </h3>
+        </h2>
+        <br /><br />
         <div className="row" id="houses">
           <div className="col-2">
             <Link to="/people/gryffindor">
@@ -124,7 +127,7 @@ class Characters extends Component {
             <br />
             <Link to="/home">
               <button type="button" className="btn btn-outline-light">
-                Homepage
+                Back to Homepage
               </button>
             </Link>
           </div>

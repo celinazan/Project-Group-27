@@ -1,31 +1,54 @@
-.scroll {
-  width: 748px;
-  height: 1067px;
-  margin: auto;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-image: url("https://i.pinimg.com/originals/ed/1e/d0/ed1ed046ddaadd9da1bdaa4fd05c86bd.png");
+.sorting {
+  padding-top: 35px;
 }
 
-#people {
-  text-align: center;
-  height: 900px;
-  padding: 0px;
-  margin: auto;
-  margin-top: 0px;
-  align-self: auto;
-  columns: 2;
+h2 {
+  color: white;
+  font-size: 26pt;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-#peopleList {
-  margin: 0px;
-  font-size: 17pt;
-  padding: 0px;
-  padding-bottom: 5px;
+p {
+  color: white;
+  font-size: 14pt;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 50px;
+}
+
+a {
   color: black;
-  font-family: "Brush Script MT", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
 }
 
-body {
-  padding-bottom: 15px;
+a:hover
+{
+    color: black;
+    text-decoration: none;
+}
+
+.card {
+  width: 450px;
+}
+
+.cardText {
+  padding: 21px;
+}
+
+#ravenclawCard {
+  background-color: #222f5b;
+}
+
+#hufflepuffCard {
+  background-color: #ecb939;
+}
+
+#slytherinCard {
+  background-color: #2a623d;
+}
+
+#gryffindorCard {
+  background-color: #ae0001;
 }
