@@ -7,63 +7,49 @@ import modelInstance from "../data/MagicModel";
 class Characters extends Component {
   constructor(props) {
     super(props);
-    // We create the state to store the various statusess
-    // e.g. API data loading or error
     this.state = {
       status: "LOADING",
-      students: null
+      students: [],
+      house: null
     };
-    this.createPeopleList = this.createPeopleList.bind(this);
     this.loadPeople = this.loadPeople.bind(this);
   }
 
-  createPeopleList() {
-    var peopleList = [];
-    var people = this.state.students;
-    console.log(people);
-    for (var i in people) {
-      var person = <p>{people[i].name}</p>;
-      peopleList.push(person);
-      console.log(person);
-    }
-    return peopleList;
-  }
-
-  update() {
+  update = () => {
     this.setState({
-      currentHouse: modelInstance.getHouse()
+      house: this.props.match.params.house
     });
-  }
+    this.loadPeople(this.props.match.params.house);
+  };
 
-  loadPeople() {
-    if (window.location.search !== "") {
-      var currentURL = window.location.search.replace("?", "");
-      modelInstance
-        .fetchData("characters", currentURL)
-        .then(people => {
-          console.log(people);
-          this.setState({
-            status: "LOADED",
-            students: people
-          });
-        })
-        .catch(() => {
-          this.setState({
-            status: "ERROR"
-          });
+  loadPeople = selHouse => {
+    var house = modelInstance.toTitleCase(selHouse);
+    modelInstance
+      .fetchData("characters", house)
+      .then(people => {
+        this.setState({
+          status: "LOADED",
+          students: people
         });
-    } else {
-      console.log("else");
-      this.setState({
-        status: "LOADED"
+      })
+      .catch(() => {
+        this.setState({
+          status: "ERROR"
+        });
       });
+  };
+
+  checkChange(input) {
+    if (input !== this.state.house) {
+      this.setState({
+        house: input
+      });
+      this.loadPeople(input);
     }
   }
 
   componentDidMount() {
-    console.log(modelInstance.getHouse());
     modelInstance.addObserver(this);
-    this.loadPeople();
   }
 
   componentWillUnmount() {
@@ -71,16 +57,36 @@ class Characters extends Component {
   }
 
   render() {
+    var studentList;
     switch (this.state.status) {
       case "LOADING":
-        return <em>Loading students...</em>;
+        studentList = <em>Loading students...</em>;
+        this.loadPeople(this.props.match.params.house);
+        break;
       case "LOADED":
-        return (
-          <div className="characters">
-            <h3 align="center">
-              Click a house crest on the left to view members of that house
-            </h3>
-            <Link to="/people/house=?gryffindor">
+        studentList = this.state.students.map(student => (
+          <li key={student._id}>{student.name}</li>
+        ));
+        break;
+
+      default:
+        studentList = <b>Failed to load data, please try again</b>;
+        break;
+    }
+    return (
+      <div className="characters">
+        <h3
+          align="center"
+          onChange={this.checkChange(this.props.match.params.house)}
+        >
+          Click a house crest on the left to view members of that house{" "}
+        </h3>
+        <h3 align="center">
+          {modelInstance.toTitleCase(this.props.match.params.house)} house
+        </h3>
+        <div className="row" id="houses">
+          <div className="col-2">
+            <Link to="/people/gryffindor">
               <img
                 src="https://vignette.wikia.nocookie.net/pottermore/images/1/16/Gryffindor_crest.png/revision/latest/scale-to-width-down/180?cb=20111112232412"
                 alt="gryffindor"
@@ -89,7 +95,7 @@ class Characters extends Component {
             </Link>
             <br />
 
-            <Link to="/people/house=?slytherin">
+            <Link to="/people/slytherin">
               <img
                 src="https://vignette.wikia.nocookie.net/pottermore/images/4/45/Slytherin_Crest.png/revision/latest?cb=20111112232353"
                 alt="slytherin"
@@ -98,7 +104,7 @@ class Characters extends Component {
             </Link>
             <br />
 
-            <Link to="/people/house=?hufflepuff">
+            <Link to="/people/hufflepuff">
               <img
                 src="https://vignette.wikia.nocookie.net/harrypotter/images/0/06/Hufflepuff_ClearBG.png/revision/latest/scale-to-width-down/350?cb=20161020182518"
                 alt="hufflepuff"
@@ -107,7 +113,7 @@ class Characters extends Component {
             </Link>
             <br />
 
-            <Link to="/people/house=?ravenclaw">
+            <Link to="/people/ravenclaw">
               <img
                 src="https://vignette.wikia.nocookie.net/pottermore/images/4/40/Ravenclaw_Crest_1.png/revision/latest?cb=20140604194505"
                 alt="ravenclaw"
@@ -121,13 +127,14 @@ class Characters extends Component {
                 Homepage
               </button>
             </Link>
-
-            <div>{this.createPeopleList()}</div>
           </div>
-        );
-      default:
-        return <b>Failed to load data, please try again</b>;
-    }
+
+          <div className="col-10">
+            <ul id="students">{studentList}</ul>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

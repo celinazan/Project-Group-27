@@ -1,9 +1,20 @@
 img {
-    padding-left: 10px;
-    padding-top: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 h3 {
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;  
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#students {
+  list-style-type: none;
+  height: auto;
+  color: white;
+  columns: 2;
+}
+
+#houses {
+  height: absolute;
 }

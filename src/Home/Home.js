@@ -36,7 +36,7 @@ class Home extends Component {
         <br />
 
         <div className="card" id="peopleCard">
-          <Link to="/people">
+          <Link to="/people/select">
             <div className="card-body row">
               <div className="col-12 cardText">
                 <h5 className="card-title">House Members</h5>
