@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./ministryEmployees.css";
 import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
@@ -24,10 +23,10 @@ class MinistryEmployees extends Component {
   }
 
   checkIfMinistry() {
-    var minList = []
+    var minList = [];
     for (var x in this.state.peopleList) {
-      if( this.state.peopleList[x].ministryOfMagic == true){
-        minList.push(this.state.peopleList[x])
+      if (this.state.peopleList[x].ministryOfMagic == true) {
+        minList.push(this.state.peopleList[x]);
       }
     }
   }
@@ -73,11 +72,11 @@ class MinistryEmployees extends Component {
           <div className="sorted">
             <br />
             <div className="btn-place" align="center">
-            <Link to="/home">
-              <button type="button" className="btn btn-outline-light">
-                Start learning!
-              </button>
-            </Link>
+              <Link to="/home">
+                <button type="button" className="btn btn-outline-light">
+                  Start learning!
+                </button>
+              </Link>
             </div>
             <br />
             <div className="scroll row">

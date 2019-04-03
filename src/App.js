@@ -7,13 +7,12 @@ import Sorted from "./Sorted/Sorted";
 import Spells from "./Spells/Spells";
 import Home from "./Home/Home";
 import OtherPeople from "./OtherPeople/otherPeople";
-import DeathEaters from "./Otherpeople/deathEaters";
+import DeathEaters from "./OtherPeople/deathEaters";
 import MinistryEmployees from "./OtherPeople/ministryEmployees";
 import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
 import LearnedSpells from "./LearnedSpells/LearnedSpells";
 import Characters from "./Characters/Characters";
-import DeathEaters from "./OtherPeople/deathEaters";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -37,10 +36,7 @@ class App extends Component {
             render={() => <Sorting model={modelInstance} />}
           />
 
-          <Route
-            path="/sorted/:house"
-            render={() => <Sorted model={modelInstance} />}
-          />
+          <Route path="/sorted/:house" component={Sorted} />
 
           <Route path="/spellDetail/:spellId" component={SpellDetail} />
 
@@ -59,11 +55,6 @@ class App extends Component {
           />
 
           <Route
-            path="/deatheaters"
-            render={() => <DeathEaters model={modelInstance} />}
-          />
-
-          <Route
             path="/ministryEmployees"
             render={() => <MinistryEmployees model={modelInstance} />}
           />
@@ -73,10 +64,7 @@ class App extends Component {
             render={() => <LearnedSpells model={modelInstance} />}
           />
 
-          <Route
-            path="/people"
-            render={() => <Characters model={modelInstance} />}
-          />
+          <Route path="/people/:house" component={Characters} />
         </header>
       </div>
     );

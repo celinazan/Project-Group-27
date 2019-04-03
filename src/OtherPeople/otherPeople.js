@@ -22,13 +22,13 @@ class OtherPeople extends Component {
                   alt="darkmark"
                   height="125px"
                 />
-                </div>
+              </div>
             </div>
           </Link>
         </div>
         <br />
 
-        <Link to="/ministryEmployees">
+        <Link to="/ministryemployees">
           <div className="card" id="ministryCard">
             <div className="card-body row">
               <div className="col-6 cardText">
@@ -44,7 +44,7 @@ class OtherPeople extends Component {
                   height="120px"
                   width="140px"
                 />
-                </div>
+              </div>
             </div>
           </div>
         </Link>
