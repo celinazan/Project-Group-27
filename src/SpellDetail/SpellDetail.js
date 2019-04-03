@@ -80,7 +80,7 @@ class SpellDetail extends Component {
                 className="btn btn-outline-light"
                 id="AllSpellsButton"
               >
-                All spells
+                Back to All spells
               </button>
             </Link>
             <Link to="/learnedSpells">
