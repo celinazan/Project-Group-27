@@ -103,6 +103,7 @@ class LearnedSpells extends Component {
       .ref("messages")
       .push(this.inputEl.value);
     this.inputEl.value = ""; // <- clear the input
+    alert("Saved");
   }
 
   render() {
@@ -156,8 +157,14 @@ class LearnedSpells extends Component {
                     Enter your notes about this spell:
                   </div>
                   <form onSubmit={this.addMessage.bind(this)}>
-                    <input type="text" ref={el => (this.inputEl = el)} />
-                    <input type="submit" />
+                    <textarea
+                      placeholder="Press here to start adding your note"
+                      ref={el => (this.inputEl = el)}
+                    />
+                    <input
+                      className="btn btn-outline-dark saveButton"
+                      type="submit"
+                    />
                   </form>
                 </div>
               </div>
