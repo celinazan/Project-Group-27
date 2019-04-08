@@ -14,31 +14,22 @@ class DeathEaters extends Component {
     };
   }
 
-  checkIfDeatheater() {
-    var deList = [];
-    for (var x in this.state.peopleList) {
-      if (this.state.peopleList[x].deathEater == true) {
-        deList.push(this.state.peopleList[x]);
-      }
-    }
-  }
-
-  update() {
-    this.setState({
-      currentHouse: modelInstance.getHouse()
-    });
-  }
-
   componentDidMount() {
     modelInstance.addObserver(this);
     modelInstance
       .fetchData("characters")
       .then(people => {
+        var deList = [];
+
+        for (var x in people) {
+          if (people[x].deathEater === true) {
+            deList.push(people[x]);
+          }
+        }
         this.setState({
           status: "LOADED",
-          peopleList: people
-        }),
-          console.log(people);
+          peopleList: deList
+        });
       })
       .catch(() => {
         this.setState({
@@ -75,7 +66,7 @@ class DeathEaters extends Component {
               </p>
 
               <div id="people">
-                <div id="dumb">
+                <div id="deathEaterList">
                   {this.state.peopleList.map(person => (
                     <p id="peopleList" key={person._id}>
                       {person.name}

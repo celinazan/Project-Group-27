@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
-class MinistryEmployees extends Component {
+class DeathEaters extends Component {
   constructor(props) {
     super(props);
     // We create the state to store the various statusess
@@ -11,52 +11,32 @@ class MinistryEmployees extends Component {
     this.state = {
       status: "LOADING",
       peopleList: [],
-      currentHouse: modelInstance.getHouse()
+      deathEaterList: []
     };
-    this.setHouseCookie = this.setHouseCookie.bind(this);
-  }
-
-  setHouseCookie() {
-    var currentURL = window.location.search.replace("?", "");
-    modelInstance.newCookie("house", currentURL);
-    modelInstance.setHouse();
-  }
-
-  checkIfMinistry() {
-    var minList = [];
-    for (var x in this.state.peopleList) {
-      if (this.state.peopleList[x].ministryOfMagic == true) {
-        minList.push(this.state.peopleList[x]);
-      }
-    }
-  }
-
-  update() {
-    this.setState({
-      currentHouse: modelInstance.getHouse()
-    });
   }
 
   componentDidMount() {
     modelInstance.addObserver(this);
-    this.setHouseCookie();
-    setTimeout(
-      () =>
-        modelInstance
-          .fetchData("characters", this.state.currentHouse)
-          .then(people => {
-            this.setState({
-              status: "LOADED",
-              people: people
-            });
-          })
-          .catch(() => {
-            this.setState({
-              status: "ERROR"
-            });
-          }),
-      100
-    );
+    modelInstance
+      .fetchData("characters")
+      .then(people => {
+        var deList = [];
+
+        for (var x in people) {
+          if (people[x].ministryOfMagic === true) {
+            deList.push(people[x]);
+          }
+        }
+        this.setState({
+          status: "LOADED",
+          peopleList: deList
+        });
+      })
+      .catch(() => {
+        this.setState({
+          status: "ERROR"
+        });
+      });
   }
 
   componentWillUnmount() {
@@ -66,7 +46,7 @@ class MinistryEmployees extends Component {
   render() {
     switch (this.state.status) {
       case "LOADING":
-        return <em>Loading spells...</em>;
+        return <em>Loading members...</em>;
       case "LOADED":
         return (
           <div className="sorted">
@@ -74,7 +54,7 @@ class MinistryEmployees extends Component {
             <div className="btn-place" align="center">
               <Link to="/home">
                 <button type="button" className="btn btn-outline-light">
-                  Start learning!
+                  Go Back
                 </button>
               </Link>
             </div>
@@ -83,12 +63,12 @@ class MinistryEmployees extends Component {
               <p className="col-12" align="center">
                 <br />
                 <br />
-                Here is a list of employees at the Ministry of Magic!
+                Here is a list of all Ministry of Magic members
               </p>
 
               <div id="people">
-                <div id="dumb">
-                  {this.state.people.map(person => (
+                <div id="ministryList">
+                  {this.state.peopleList.map(person => (
                     <p id="peopleList" key={person._id}>
                       {person.name}
                     </p>
@@ -104,4 +84,4 @@ class MinistryEmployees extends Component {
   }
 }
 
-export default MinistryEmployees;
+export default DeathEaters;
