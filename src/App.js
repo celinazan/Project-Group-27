@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import Start from "./Start/Start";
 import Welcome from "./Welcome/Welcome";
 import modelInstance from "./data/MagicModel";
 import Sorting from "./Sorting/Sorting";
@@ -31,12 +30,7 @@ class App extends Component {
           </h1>
 
           {/* We rended diffrent component based on the path */}
-          <Route exact path="/" component={Start} />
-
-          <Route 
-          path="/welcome"
-          render={() => <Welcome model={modelInstance} />}
-          />
+          <Route exact path="/" component={Welcome} />
 
           <Route
             path="/search"
