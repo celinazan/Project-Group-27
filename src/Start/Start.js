@@ -10,7 +10,7 @@ class Start extends Component {
       <br /> <br /> <br />
         <h1>Please enter your name in the box below, young witch/wizard:</h1>
         <br />
-        <input type="text" id="name"  value="" />
+        <input type="text" placeholder="Your Name" id="name" />
         <br/> <br />
         <Link to="/welcome">
           <button className="btn btn-outline-light" onclick="document.getElementById('name').value" id="nameButton" >Begin</button>
