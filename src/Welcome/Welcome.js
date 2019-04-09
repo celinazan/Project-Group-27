@@ -53,7 +53,7 @@ class Welcome extends Component {
         <h1>Welcome Hogwarts School for Witchcraft and Wizardry!</h1>
         <p>This nice piece of muggle technology lets you browse the spells you will be learning.
           <br /> You can also use it to get familiar with other students, past and present. </p>
-      <br /> <br /> <br /> <br />
+      <br /> <br />
     <h3>Please enter your name in the box below, young witch/wizard:</h3>
   <br />
     <form onSubmit={this.addMessage.bind(this)}>
