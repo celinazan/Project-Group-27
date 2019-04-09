@@ -6,14 +6,12 @@
 
 textarea {
   margin-top: 5%;
-  height: 400px;
   width: 95%;
   outline: none;
   resize: none;
   overflow: auto;
   border: 0px;
   background: transparent;
-  font-family: "Waiting for the Sunrise";
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 3px;
