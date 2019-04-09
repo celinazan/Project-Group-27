@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import modelInstance from "../data/MagicModel";
 
-class DeathEaters extends Component {
+class ministryEmployees extends Component {
   constructor(props) {
     super(props);
     // We create the state to store the various statusess
@@ -52,7 +52,7 @@ class DeathEaters extends Component {
           <div className="sorted">
             <br />
             <div className="btn-place" align="center">
-              <Link to="/home">
+              <Link to="/otherPeople">
                 <button type="button" className="btn btn-outline-light">
                   Go Back
                 </button>
@@ -84,4 +84,4 @@ class DeathEaters extends Component {
   }
 }
 
-export default DeathEaters;
+export default ministryEmployees;

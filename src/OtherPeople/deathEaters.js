@@ -51,7 +51,7 @@ class DeathEaters extends Component {
           <div className="sorted">
             <br />
             <div className="btn-place" align="center">
-              <Link to="/home">
+              <Link to="/otherPeople">
                 <button type="button" className="btn btn-outline-light">
                   Go Back
                 </button>
