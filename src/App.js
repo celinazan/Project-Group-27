@@ -61,7 +61,7 @@ class App extends Component {
           />
 
           <Route
-            path="/favouritepells"
+            path="/favouritespells"
             render={() => <FaveSpells model={modelInstance} />}
           />
 

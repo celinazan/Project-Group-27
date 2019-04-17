@@ -88,13 +88,13 @@ class Spells extends Component {
                 Homepage
               </button>
             </Link>
-            <Link to="/learnedSpells">
+            <Link to="/favouriteSpells">
               <button
                 type="button"
                 className="btn btn-outline-light"
-                id="learnedSpellsButton10"
+                id="faveSpellsButton10"
               >
-                Learned spells
+                Favourite spells
               </button>
             </Link>
             <div className="page">
