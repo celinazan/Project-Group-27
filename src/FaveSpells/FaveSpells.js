@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import "./LearnedSpells.css";
+import "./FaveSpells.css";
 import modelInstance from "../data/MagicModel";
 import firebase from "firebase";
 
-class LearnedSpells extends Component {
+class FaveSpells extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -176,7 +176,7 @@ class LearnedSpells extends Component {
               >
                 Previous spell
               </button>
-              <button
+              <button 
                 id="bookButton"
                 type="button"
                 className="btn btn-outline-light"
@@ -193,4 +193,4 @@ class LearnedSpells extends Component {
     }
   }
 }
-export default LearnedSpells;
+export default FaveSpells;

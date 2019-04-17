@@ -11,7 +11,7 @@ import DeathEaters from "./OtherPeople/deathEaters";
 import MinistryEmployees from "./OtherPeople/ministryEmployees";
 import SpellDetail from "./SpellDetail/SpellDetail";
 import "./App.css";
-import LearnedSpells from "./LearnedSpells/LearnedSpells";
+import FaveSpells from "./FaveSpells/FaveSpells";
 import Characters from "./Characters/Characters";
 class App extends Component {
   constructor(props) {
@@ -61,8 +61,8 @@ class App extends Component {
           />
 
           <Route
-            path="/learnedSpells"
-            render={() => <LearnedSpells model={modelInstance} />}
+            path="/favouritepells"
+            render={() => <FaveSpells model={modelInstance} />}
           />
 
           <Route path="/people/:house" component={Characters} />

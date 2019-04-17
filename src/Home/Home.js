@@ -21,13 +21,13 @@ class Home extends Component {
         </div>
         <br />
 
-        <div className="card" id="learnedCard">
-         <Link to="/learnedSpells">
+        <div className="card" id="faveCard">
+         <Link to="/favouriteSpells">
            <div className="card-body row">
              <div className="col-12 cardText">
-               <h5 className="card-title">Learned Spells</h5>
+               <h5 className="card-title">Favourite Spells</h5>
                <h6 className="card-subtitle mb-2 text-muted">
-                 View your learned spells and their notes
+                 View your saved favourite spells
                </h6>
              </div>
            </div>
