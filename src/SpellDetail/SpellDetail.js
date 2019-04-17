@@ -46,11 +46,11 @@ class SpellDetail extends Component {
       });
   };
 
-  addToLearnedSpells = spell => {
+  addToFaveSpells = spell => {
     alert(
-      "Hello! I am an alert box! When this work you have addded the " +
+      "You have addded the " +
         spell +
-        " spell to your learned spells"
+        " spell to your favourite spells"
     );
   };
 
@@ -80,16 +80,16 @@ class SpellDetail extends Component {
                 className="btn btn-outline-light"
                 id="AllSpellsButton"
               >
-                Back to All spells
+                Back to All Spells
               </button>
             </Link>
-            <Link to="/learnedSpells">
+            <Link to="/favouriteSpells">
               <button
                 type="button"
                 className="btn btn-outline-light"
-                id="learnedSpellsButton"
+                id="faveSpellsButton"
               >
-                Learned spells
+                View Favourited Spells
               </button>
             </Link>
             <div className="page">
@@ -113,7 +113,7 @@ class SpellDetail extends Component {
                 </div>
                 <div className="rightPage">
                   <div className="header">
-                    You can add it to your learned spells and add your own note.
+                    Press the button below to add this spell to your list of favourite spells!
                   </div>
                   <button
                     id="addSpellButton"
