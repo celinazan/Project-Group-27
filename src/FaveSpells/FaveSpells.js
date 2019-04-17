@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import database from "firebase" ;
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./FaveSpells.css";
