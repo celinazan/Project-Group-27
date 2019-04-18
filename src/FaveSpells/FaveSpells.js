@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./FaveSpells.css";
-import modelInstance from "../data/MagicModel";
 import { auth, database } from "../firebase";
 
 class FavoritesList extends React.Component {
@@ -40,13 +38,6 @@ class FavoritesList extends React.Component {
       console.log("snapshot", snapshot.val(), "favorites", favorites)
       this.setState({ favorites });
     });
-  }
-
-  componentWillUnmount() {
-    /*
-    const userId = auth.currentUser.uid
-    database.ref(`users/${userId}/favorites`).off()
-    */
   }
 
   render() {

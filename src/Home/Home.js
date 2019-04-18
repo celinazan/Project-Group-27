@@ -82,7 +82,7 @@ class Home extends Component {
           </Link>
         </div>
         <br />
-        <button onClick={this.logout}>Log out</button>
+        <button onClick={this.logout} className="btn btn-outline-light">Log out</button>
       </div>
     );
   }

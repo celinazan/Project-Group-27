@@ -6,8 +6,7 @@ import modelInstance from "../data/MagicModel";
 class ministryEmployees extends Component {
   constructor(props) {
     super(props);
-    // We create the state to store the various statusess
-    // e.g. API data loading or error
+    
     this.state = {
       status: "LOADING",
       peopleList: [],
