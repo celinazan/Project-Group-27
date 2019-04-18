@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import modelInstance from "../data/MagicModel";
 import { Link } from "react-router-dom";
+import { database, auth } from "../firebase";
 import "bootstrap/dist/css/bootstrap.css";
 import "./SpellDetail.css";
 
@@ -46,12 +47,14 @@ class SpellDetail extends Component {
       });
   };
 
-  addToFaveSpells = spell => {
-    alert(
-      "You have addded the " +
-        spell +
-        " spell to your favourite spells"
-    );
+  addToFaveSpells = () => {
+    const spell = this.state.spell[0]
+    const userId = auth.currentUser.uid;
+    database.ref(`users/${userId}/favorites/${spell._id}`).set(spell).then(() => {
+      console.log("added spell")
+    }).catch(error => {
+      alert(error)
+    })
   };
 
   componentDidMount() {
@@ -119,7 +122,7 @@ class SpellDetail extends Component {
                     id="addSpellButton"
                     type="button"
                     className="btn btn-outline-dark"
-                    onClick={() => this.addToLearnedSpells()}
+                    onClick={() => this.addToFaveSpells()}
                   >
                     Add
                   </button>

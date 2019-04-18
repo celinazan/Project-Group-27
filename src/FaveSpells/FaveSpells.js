@@ -3,22 +3,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./FaveSpells.css";
 import modelInstance from "../data/MagicModel";
-import firebaseApp from "firebase";
-import database from "firebase";
-
-function addToFavorites(spell) {
-  const userId = firebaseApp.auth().currentUser.uid;
-  if (!userId) throw new Error("User is not logged in");
-
-  return database.doc(`favorites/${userId}/${spell.id}`).set(spell);
-}
-
-function removeFromFavorites(spell) {
-  const userId = firebaseApp.auth().currentUser.uid;
-  if (!userId) throw new Error("User is not logged in");
-
-  return database.doc(`favorites/${userId}/${spell.id}`).delete();
-}
+import { auth, database } from "../firebase";
 
 class FavoritesList extends React.Component {
   state = {
@@ -26,26 +11,55 @@ class FavoritesList extends React.Component {
   };
 
   componentDidMount() {
-    firebaseApp.initializeApp({
-      apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U", // Auth / General Use
-      authDomain: "hogwarts-study-tool.firebaseapp.com", // Auth with popup/redirect
-      databaseURL: "https://hogwarts-study-tool.firebaseio.com", // Realtime Database
-      storageBucket: "hogwarts-study-tool.appspot.com", // Storage
-      messagingSenderId: "755168622286" // Cloud Messaging
-    });
-    const userId = firebaseApp.auth().currentUser.uid;
-    database.ref(`favorites/${userId}`).on("value", snapshot => {
+    if (!auth.currentUser) {
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          this.getFaveSpells()
+        }
+      })
+      return;
+    }
+    
+    this.getFaveSpells();
+  }
+
+  removeFromFaveSpells = (spellId) => {
+    const userId = auth.currentUser.uid;
+    database.ref(`users/${userId}/favorites/${spellId}`).remove()
+  }
+
+  getFaveSpells() {
+    const userId = auth.currentUser.uid
+    database.ref(`users/${userId}/favorites`).on("value", snapshot => {
       if (!snapshot.val()) {
+        this.setState({ favorites: [] })
         return;
       }
 
       const favorites = Object.values(snapshot.val());
+      console.log("snapshot", snapshot.val(), "favorites", favorites)
       this.setState({ favorites });
     });
   }
 
+  componentWillUnmount() {
+    /*
+    const userId = auth.currentUser.uid
+    database.ref(`users/${userId}/favorites`).off()
+    */
+  }
+
   render() {
-    return <div>snor</div>;
+    return (
+      <div className="fave-spells">
+        {this.state.favorites.map(spell => (
+          <div key={spell._id}>
+            {spell.spell}
+            <button onClick={() => this.removeFromFaveSpells(spell._id)}>X</button>
+          </div>
+        ))}
+      </div>
+    )
   }
 }
 
