@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.css";
+import { auth } from "../firebase";
 
 class Home extends Component {
+  logout = () => {
+    auth.signOut().then(() => {
+      this.props.history.push("/")
+    })
+  }
   render() {
     return (
       <div className="sorting" align="center">
@@ -76,9 +82,10 @@ class Home extends Component {
           </Link>
         </div>
         <br />
+        <button onClick={this.logout}>Log out</button>
       </div>
     );
   }
 }
 
-export default Home;
+export default withRouter(Home);

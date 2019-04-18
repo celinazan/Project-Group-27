@@ -1,51 +1,40 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./Welcome.css";
 import "bootstrap/dist/css/bootstrap.css";
-import firebase from "firebase";
+import { auth } from "../firebase";
 
 class Welcome extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        message: ["test"]
-      };
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyDctErSNqeka-L9dZ7hUWbq_ify9kUKg9U",
-        authDomain: "hogwarts-study-tool.firebaseapp.com",
-        databaseURL: "https://hogwarts-study-tool.firebaseio.com",
-        projectId: "hogwarts-study-tool",
-        storageBucket: "hogwarts-study-tool.appspot.com",
-        messagingSenderId: "755168622286"
-      };
-      firebase.initializeApp(config);
-      console.log(firebase);
-    }
-   
-    componentWillMount() {
-      /* Create reference to messages in Firebase Database */
-      let messagesRef = firebase
-        .database()
-        .ref("messages")
-        .orderByKey()
-        .limitToLast(100);
-      messagesRef.on("child_added", snapshot => {
-        /* Update React state when message is added at Firebase Database */
-        let message = { text: snapshot.val(), id: snapshot.key };
-        this.setState({ messages: [message].concat(this.state.messages) });
-      });
-    }
-    addMessage(e) {
-      e.preventDefault(); // <- prevent form submit from reloading the page
-      /* Send the message to Firebase */
-      firebase
-        .database()
-        .ref("messages")
-        .push(this.inputEl.value);
-      this.inputEl.value = ""; // <- clear the input
-      alert("Saved");
-    }
+  componentDidMount() {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.props.history.push("/search")
+      }
+    })
+  }
+
+  onSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target.elements
+    const email = form[0].value
+    const password = form[1].value
+    auth.createUserWithEmailAndPassword(email, password).catch(error => {
+      alert(error)
+    })
+  }
+
+  onSignIn = (event) => {
+    event.preventDefault();
+    const form = event.target.elements
+    const email = form[0].value
+    const password = form[1].value
+    auth.signInWithEmailAndPassword(email, password)
+    .catch(error => {
+      alert(error)
+    })
+  }
+
+
   render() {
     return (
       <div className="Welcome" align="center">
@@ -54,28 +43,26 @@ class Welcome extends Component {
         <p>This nice piece of muggle technology lets you browse the spells you will be learning.
           <br /> You can also use it to get familiar with other students, past and present. </p>
       <br /> <br /> <br /> <br />
-    <h3>Please enter your name in the box below, young witch/wizard:</h3>
+
+    <h3>Please enter your email and password in the boxes below, young witch/wizard:</h3>
   <br />
-    <form onSubmit={this.addMessage.bind(this)}>
-      <textarea
-        ref={el => (this.inputEl = el)}
-      />
-        <input
-          className="btn btn-outline-light saveButton"
-          type="submit"
-      />
+    <h3>Sign Up</h3>
+    <form onSubmit={this.onSignUp}>
+      <input type="email" placeholder="Enter email"/><input type="password" placeholder="Enter password"/>
+      <button className="btn btn-outline-light">Sign Up</button>
       </form>
       <br />
-    <Link to="/search">
-      <button 
-      type="button"
-      className="btn btn-outline-light">
-      Start learning!
-      </button>
-    </Link>
-    </div>
+      
+    <h3>Sign In</h3>
+    <form onSubmit={this.onSignIn}>
+    <input type="email" placeholder="Enter email"/><input type="password" placeholder="Enter password"/>
+      <button className="btn btn-outline-light">Sign In</button>
+      </form>
+
+      </div>
+
     );
   }
 }
 
-export default Welcome;
+export default withRouter(Welcome);
