@@ -67,6 +67,8 @@ OtherPeople.js -
 
 # TO-DO LIST (so we remember what to do)
 
-Design a page for viewing the spells that the user has learned, right now it is a copy of adding notes to spells
+Design a page for favourite spells
 
-Figure out how to work with Firebase, how to save what is written and access it
+Make a way for user to add favourite spells
+
+Login
