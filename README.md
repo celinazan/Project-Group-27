@@ -67,8 +67,10 @@ OtherPeople.js -
 
 # TO-DO LIST (so we remember what to do)
 
-Design a page for favourite spells
+Design a page for favourite spells, add the book and some styling
 
-Make a way for user to add favourite spells
+Next button on the Spell Details doesn't work
 
-Login
+Fix so that spells that are favorited are marked somehow
+
+
