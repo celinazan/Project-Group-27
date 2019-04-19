@@ -9,52 +9,62 @@ class SpellDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: "LOADING",
-      spellIndex: 0,
-      offset: 1
+      status: "LOADING"
     };
   }
 
-  nextPage = () => {
-    this.setState({
-      spellIndex: this.state.spellIndex + 1,
-      offset: this.state.offset + 1
-    });
-    this.getSpell();
-  };
-
-  previousPage = () => {
-    this.setState({
-      spellIndex: this.state.spellIndex - 1,
-      offset: this.state.offset - 1
-    });
-    this.getSpell();
-  };
-
   getSpell = id => {
     modelInstance
-      .fetchDataID(id)
+      .fetchData("spells")
       .then(spell => {
+        var activeSpellIndex = spell.findIndex(spell => spell._id === id);
+        var nextSpellIndex = activeSpellIndex + 1;
+        var previousSpellIndex = activeSpellIndex - 1;
         this.setState({
-          spell: spell,
-          status: "LOADED"
+          status: "LOADED",
+          allspells: spell,
+          spell: spell.slice(activeSpellIndex, nextSpellIndex),
+          nextSpell: spell.slice(nextSpellIndex, nextSpellIndex + 1),
+          previousSpell: spell.slice(previousSpellIndex, previousSpellIndex + 1)
         });
       })
       .catch(() => {
+        console.log("error");
         this.setState({
           status: "ERROR"
         });
       });
   };
 
+  // getSpell = id => {
+  //   modelInstance
+  //     .fetchDataID(id)
+  //     .then(spell => {
+  //       console.log(spell);
+  //       this.setState({
+  //         spell: spell,
+  //         status: "LOADED"
+  //       });
+  //     })
+  //     .catch(() => {
+  //       this.setState({
+  //         status: "ERROR"
+  //       });
+  //     });
+  // };
+
   addToFaveSpells = () => {
-    const spell = this.state.spell[0]
+    const spell = this.state.spell[0];
     const userId = auth.currentUser.uid;
-    database.ref(`users/${userId}/favorites/${spell._id}`).set(spell).then(() => {
-      console.log("added spell")
-    }).catch(error => {
-      alert(error)
-    })
+    database
+      .ref(`users/${userId}/favorites/${spell._id}`)
+      .set(spell)
+      .then(() => {
+        alert("Added spell", spell);
+      })
+      .catch(error => {
+        alert(error);
+      });
   };
 
   componentDidMount() {
@@ -69,18 +79,14 @@ class SpellDetail extends Component {
         return (
           <div>
             <Link to="/home">
-              <button
-                type="button"
-                className="btn btn-outline-light"
-                id="homeButton"
-              >
+              <button type="button" className="btn btn-light" id="homeButton">
                 Homepage
               </button>
             </Link>
             <Link to="/Spells">
               <button
                 type="button"
-                className="btn btn-outline-light"
+                className="btn btn-light"
                 id="AllSpellsButton"
               >
                 Back to All Spells
@@ -89,7 +95,7 @@ class SpellDetail extends Component {
             <Link to="/favouriteSpells">
               <button
                 type="button"
-                className="btn btn-outline-light"
+                className="btn btn-light"
                 id="faveSpellsButton"
               >
                 View Favourited Spells
@@ -116,33 +122,46 @@ class SpellDetail extends Component {
                 </div>
                 <div className="rightPage">
                   <div className="header">
-                    Press the button below to add this spell to your list of favourite spells!
+                    Press the button below to add this spell to your list of
+                    favourite spells!
                   </div>
                   <button
                     id="addSpellButton"
                     type="button"
-                    className="btn btn-outline-dark"
+                    className="btn btn-light"
                     onClick={() => this.addToFaveSpells()}
                   >
                     Add
                   </button>
                 </div>
               </div>
+
               <button
                 id="bookButton"
                 type="button"
-                className="btn btn-outline-light"
-                onClick={this.previousPage}
+                className="btn btn-light"
+                onClick={() => this.componentDidMount()}
               >
-                Previous spell
+                {this.state.previousSpell.map(previousSpell => (
+                  <div key={previousSpell._id}>
+                    <Link to={"/SpellDetail/" + previousSpell._id}>
+                      Previous spell
+                    </Link>
+                  </div>
+                ))}
               </button>
+
               <button
                 id="bookButton"
                 type="button"
-                className="btn btn-outline-light"
-                onClick={this.nextPage}
+                className="btn btn-light"
+                onClick={() => this.componentDidMount()}
               >
-                Next spell
+                {this.state.nextSpell.map(nextSpell => (
+                  <div key={nextSpell._id}>
+                    <Link to={"/SpellDetail/" + nextSpell._id}>Next spell</Link>
+                  </div>
+                ))}
               </button>
             </div>
           </div>

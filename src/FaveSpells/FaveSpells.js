@@ -12,30 +12,30 @@ class FavoritesList extends React.Component {
     if (!auth.currentUser) {
       auth.onAuthStateChanged(user => {
         if (user) {
-          this.getFaveSpells()
+          this.getFaveSpells();
         }
-      })
+      });
       return;
     }
-    
+
     this.getFaveSpells();
   }
 
-  removeFromFaveSpells = (spellId) => {
+  removeFromFaveSpells = spellId => {
     const userId = auth.currentUser.uid;
-    database.ref(`users/${userId}/favorites/${spellId}`).remove()
-  }
+    database.ref(`users/${userId}/favorites/${spellId}`).remove();
+  };
 
   getFaveSpells() {
-    const userId = auth.currentUser.uid
+    const userId = auth.currentUser.uid;
     database.ref(`users/${userId}/favorites`).on("value", snapshot => {
       if (!snapshot.val()) {
-        this.setState({ favorites: [] })
+        this.setState({ favorites: [] });
         return;
       }
 
       const favorites = Object.values(snapshot.val());
-      console.log("snapshot", snapshot.val(), "favorites", favorites)
+      console.log("snapshot", snapshot.val(), "favorites", favorites);
       this.setState({ favorites });
     });
   }
@@ -46,11 +46,13 @@ class FavoritesList extends React.Component {
         {this.state.favorites.map(spell => (
           <div key={spell._id}>
             {spell.spell}
-            <button onClick={() => this.removeFromFaveSpells(spell._id)}>X</button>
+            <button onClick={() => this.removeFromFaveSpells(spell._id)}>
+              X
+            </button>
           </div>
         ))}
       </div>
-    )
+    );
   }
 }
 

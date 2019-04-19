@@ -34,6 +34,10 @@ textarea {
   margin-left: 5%;
 }
 
+#bookButton div {
+  margin: 5%;
+}
+
 .black {
   color: black;
   font-family: "Waiting for the Sunrise", cursive;
