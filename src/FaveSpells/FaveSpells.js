@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./FaveSpells.css";
 import { auth, database } from "../firebase";
+import { Link } from "react-router-dom";
 
 class FavoritesList extends React.Component {
   state = {
@@ -43,14 +44,35 @@ class FavoritesList extends React.Component {
   render() {
     return (
       <div className="fave-spells">
-        {this.state.favorites.map(spell => (
-          <div key={spell._id}>
-            {spell.spell}
-            <button onClick={() => this.removeFromFaveSpells(spell._id)}>
-              X
-            </button>
+        <Link to="/home">
+          <button type="button" className="btn btn-light" id="homeButton">
+            Homepage
+          </button>
+        </Link>
+        <Link to="/Spells">
+          <button type="button" className="btn btn-light" id="AllSpellsButton">
+            Back to All Spells
+          </button>
+        </Link>
+
+        <div className="page">
+          <div className="book">
+            <h1 id="headline">All your favourite spells</h1>
+            {this.state.favorites.map(spell => (
+              <div key={spell._id}>
+                <button
+                  className="remove"
+                  onClick={() => this.removeFromFaveSpells(spell._id)}
+                >
+                  Remove
+                </button>
+                <Link className="favText" to={"/SpellDetail/" + spell._id}>
+                  {spell.spell}
+                </Link>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     );
   }

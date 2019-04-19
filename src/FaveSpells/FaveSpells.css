@@ -28,3 +28,30 @@ textarea {
   letter-spacing: 3px;
 }
 
+#headline {
+  width: 50%;
+  font-size: 400%;
+  font-family: "Waiting for the Sunrise";
+  font-size: 35px;
+  padding: 30px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: black;
+}
+
+.favText {
+  width: 26%;
+  padding-top: 2%;
+  font-family: "Waiting for the Sunrise", cursive;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.remove {
+  margin: 6px;
+}
+
+.favText:hover {
+  color: gray;
+}
