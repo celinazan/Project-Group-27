@@ -3,6 +3,7 @@ import modelInstance from "../data/MagicModel";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Spells.css";
+import { auth, database } from "../firebase";
 
 class Spells extends Component {
   constructor(props) {
@@ -10,7 +11,9 @@ class Spells extends Component {
     this.state = {
       status: "LOADING",
       spellIndex: 0,
-      offset: 56
+      offset: 56,
+      favorites: [],
+      spell: []
     };
   }
 
@@ -66,8 +69,76 @@ class Spells extends Component {
       });
   };
 
+  displaySpells() {
+    var spellList = [];
+    var indexList = [];
+
+    for (var x in this.state.spell) {
+      if (this.state.favorites.length != 0) {
+        for (var y in this.state.favorites) {
+          if (this.state.spell[x]._id === this.state.favorites[y]._id) {
+            indexList.push(x);
+            console.log(indexList);
+          }
+        }
+      }
+      spellList.push(
+        <div className="spells" key={this.state.spell[x]._id}>
+          <Link to={"/SpellDetail/" + this.state.spell[x]._id}>
+            {this.state.spell[x].spell}
+          </Link>
+        </div>
+      );
+      console.log(spellList);
+
+      if (indexList.length != 0) {
+        for (var z in indexList) {
+          spellList[indexList[z]] = (
+            <div className="spells" key={this.state.spell[indexList[z]]._id}>
+              <Link to={"/SpellDetail/" + this.state.spell[indexList[z]]._id}>
+                <img
+                  id="favMark"
+                  src="http://pngimg.com/uploads/star/star_PNG41518.png"
+                  alt="favourite"
+                  height="20px"
+                  width="20px"
+                />
+                {this.state.spell[indexList[z]].spell}
+              </Link>
+            </div>
+          );
+        }
+      }
+    }
+    return spellList;
+  }
+
+  getFaveSpells() {
+    const userId = auth.currentUser.uid;
+    database.ref(`users/${userId}/favorites`).on("value", snapshot => {
+      if (!snapshot.val()) {
+        this.setState({ favorites: [] });
+        return;
+      }
+
+      const favorites = Object.values(snapshot.val());
+      console.log("snapshot", snapshot.val(), "favorites", favorites);
+      this.setState({ favorites });
+    });
+  }
+
   componentDidMount() {
+    if (!auth.currentUser) {
+      auth.onAuthStateChanged(user => {
+        if (user) {
+          this.getSpell();
+          this.getFaveSpells();
+        }
+      });
+      return;
+    }
     this.getSpell();
+    this.getFaveSpells();
   }
 
   render() {
@@ -99,13 +170,7 @@ class Spells extends Component {
               </button>
             </Link>
             <div className="page">
-              <div className="book">
-                {this.state.spell.map(spell => (
-                  <div className="spells" key={spell._id}>
-                    <Link to={"/SpellDetail/" + spell._id}>{spell.spell}</Link>
-                  </div>
-                ))}
-              </div>
+              <div className="book">{this.displaySpells()}</div>
               <button
                 id="bookButton"
                 type="button"
