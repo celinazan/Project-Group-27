@@ -58,8 +58,8 @@ class DeathEaters extends Component {
               </Link>
             </div>
             <br />
-            <div className="scroll row">
-              <p className="col-12" align="center">
+            <div className="deatheaterLogo row">
+              <p className="col-12 headlineD" align="center">
                 <br />
                 <br />
                 Here is a list of all Death Eaters
@@ -68,7 +68,7 @@ class DeathEaters extends Component {
               <div id="people">
                 <div id="deathEaterList">
                   {this.state.peopleList.map(person => (
-                    <p id="peopleList" key={person._id}>
+                    <p id="deatheaterPeopleList" key={person._id}>
                       {person.name}
                     </p>
                   ))}

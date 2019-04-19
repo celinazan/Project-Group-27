@@ -6,7 +6,7 @@ import modelInstance from "../data/MagicModel";
 class ministryEmployees extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       status: "LOADING",
       peopleList: [],
@@ -58,8 +58,8 @@ class ministryEmployees extends Component {
               </Link>
             </div>
             <br />
-            <div className="scroll row">
-              <p className="col-12" align="center">
+            <div className="ministryLogo row">
+              <p className="col-12 headlineM" align="center">
                 <br />
                 <br />
                 Here is a list of all Ministry of Magic members
@@ -68,7 +68,7 @@ class ministryEmployees extends Component {
               <div id="people">
                 <div id="ministryList">
                   {this.state.peopleList.map(person => (
-                    <p id="peopleList" key={person._id}>
+                    <p id="minPeopleList" key={person._id}>
                       {person.name}
                     </p>
                   ))}
