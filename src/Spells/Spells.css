@@ -32,6 +32,10 @@ h3 {
   letter-spacing: 3px;
 }
 
+.spells:hover {
+  color: gray;
+}
+
 #faveSpellsButton10 {
   position: fixed;
   margin-left: 5%;

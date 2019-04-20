@@ -84,7 +84,10 @@ class Spells extends Component {
       }
       spellList.push(
         <div className="spells" key={this.state.spell[x]._id}>
-          <Link to={"/SpellDetail/" + this.state.spell[x]._id}>
+          <Link
+            className="spells"
+            to={"/SpellDetail/" + this.state.spell[x]._id}
+          >
             {this.state.spell[x].spell}
           </Link>
         </div>
@@ -95,7 +98,10 @@ class Spells extends Component {
         for (var z in indexList) {
           spellList[indexList[z]] = (
             <div className="spells" key={this.state.spell[indexList[z]]._id}>
-              <Link to={"/SpellDetail/" + this.state.spell[indexList[z]]._id}>
+              <Link
+                className="spells"
+                to={"/SpellDetail/" + this.state.spell[indexList[z]]._id}
+              >
                 <img
                   id="favMark"
                   src="http://pngimg.com/uploads/star/star_PNG41518.png"
